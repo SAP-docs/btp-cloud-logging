@@ -118,7 +118,7 @@ No
 </td>
 <td valign="top">
 
-Configures the data ingestion over the ingest-otlp endpoint \(OpenTelemetry Protocol\).Configures the maximum number of OpenSearch data nodes for disk-based auto-scaling. Must be between `2` and `10`. Defaults to `10`.
+Configures the data ingestion over the ingest-otlp endpoint \(OpenTelemetry Protocol\). 
 
 </td>
 </tr>
@@ -140,7 +140,7 @@ Integer
 </td>
 <td valign="top">
 
-The time in days until data \(see [Ingest Observability Data](ingest-observability-data-ba16ff7.md)\) is deleted. Range is between `1` and `90`. Defaults to `7`. That deletion of ingested data can also happen due to size-based curation. Changing this parameter will only affect newly created indices.
+The time in days until data \(see [Ingest Observability Data](ingest-observability-data-ba16ff7.md)\) is deleted. The range is between `1` and `90` and it defaults to `7`. Data can also be deleted if the file grows too large, due to size-based curation. Changing this parameter will only affect newly-created indices.
 
 </td>
 </tr>
