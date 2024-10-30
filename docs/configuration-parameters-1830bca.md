@@ -4,7 +4,8 @@
 
 SAP Cloud Logging supports the following parameters for `create service` and `update service` operations.
 
-
+> ### Note:  
+> Configuration parameters may impact pricing. Pricing information is available via [Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/cloud-logging?tab=service_plan) and [SAP Cloud Logging Capacity Unit Estimator](https://sap-cloud-logging-estimator.cfapps.us10.hana.ondemand.com/)
 
 <a name="loio1830bca1b060484e9cfabc0e62472e8e__section_gzh_zcn_lzb"/>
 
