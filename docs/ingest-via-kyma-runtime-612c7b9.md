@@ -2,7 +2,7 @@
 
 # Ingest via Kyma Runtime
 
-Kyma's [Telemetry](https://kyma-project.io/docs/kyma/latest/01-overview/telemetry) component supports shipping observability signals to SAP Cloud Logging instances. You can configure different observability signal types independently of each other.
+Kyma's [Telemetry](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-telemetry-module) module supports shipping observability signals to SAP Cloud Logging instances. You can configure different observability signal types independently of each other.
 
 > ### Caution:  
 > Ensure that you consider the [SAP BTP Security Recommendation BTP-CLS-0003](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0003&version=Cloud).
@@ -14,8 +14,8 @@ Kyma's [Telemetry](https://kyma-project.io/docs/kyma/latest/01-overview/telemetr
 ## Prerequisites
 
 -   An [SAP BTP Kyma runtime](https://help.sap.com/docs/btp/sap-business-technology-platform/create-kyma-environment-instance) instance
-    -   With `telemetry` [module](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-modules) [enabled](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module).
-    -   With `btp-operator` [module](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-modules) [enabled](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module).
+    -   With `telemetry` [module](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-modules) [added](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module).
+    -   With `btp-operator` [module](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-modules) [added](https://help.sap.com/docs/btp/sap-business-technology-platform/enable-and-disable-kyma-module).
 
 -   Kubernetes CLI \(kubectl\) v1.23 or higher \(see the [kubectl tutorial](https://developers.sap.com/tutorials/cp-kyma-download-cli.html)\).
 -   SAP Cloud Logging instance with [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md) enabled to ingest distributed traces. We recommend you create it with the SAP BTP Service Operator \(see [Create an SAP Cloud Logging Instance through SAP BTP Service Operator](create-an-sap-cloud-logging-instance-through-sap-btp-service-operator-f6aa131.md)\), because it takes care of creation and rotation of the required Secret.
@@ -26,7 +26,7 @@ Kyma's [Telemetry](https://kyma-project.io/docs/kyma/latest/01-overview/telemetr
 
 ## Procedure
 
-To integrate Cloud Logging on SAP BTP Kyma Runtime, please follow Kyma documentation on [how to ship from Kyma to SAP Cloud Logging](https://kyma-project.io/#/telemetry-manager/user/integration/sap-cloud-logging/README).
+To integrate Cloud Logging on SAP BTP Kyma Runtime, please follow Kyma documentation on [how to ship from Kyma to SAP Cloud Logging](https://help.sap.com/docs/btp/sap-business-technology-platform/integrate-with-sap-cloud-logging).
 
 
 

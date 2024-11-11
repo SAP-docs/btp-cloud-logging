@@ -4,6 +4,9 @@
 
 SAP Cloud Logging supports the following parameters for `create service` and `update service` operations.
 
+> ### Note:  
+> Configuration parameters may impact pricing. Pricing information is available via [Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/cloud-logging?tab=service_plan&service_plan=overall-(large,-standard,-and-dev)&region=all&commercialModel=btpea) and [SAP Cloud Logging Capacity Unit Estimator](https://sap-cloud-logging-estimator.cfapps.us10.hana.ondemand.com/).
+
 
 
 <a name="loio1830bca1b060484e9cfabc0e62472e8e__section_gzh_zcn_lzb"/>
@@ -140,7 +143,7 @@ Integer
 </td>
 <td valign="top">
 
-The time in days until data \(see [Ingest Observability Data](ingest-observability-data-ba16ff7.md)\) is deleted. Range is between `1` and `90`. Defaults to `7`. That deletion of ingested data can also happen due to size-based curation. Changing this parameter will only affect newly created indices.
+The time in days until data \(see [Ingest Observability Data](ingest-observability-data-ba16ff7.md)\) is deleted. The range is between `1` and `90` and it defaults to `7`. Data can also be deleted if the file grows too large, due to size-based curation. Changing this parameter will only affect newly-created indices.
 
 </td>
 </tr>
@@ -486,7 +489,7 @@ String
 </td>
 <td valign="top">
 
-The SAML group to grant administrative access and permissions to modify the security module. Required if `enabled` is set to `true`. Required if *enabled* is set to `true`.
+The SAML group to grant administrative access and permissions to modify the security module. Required if `enabled` is set to `true`.
 
 </td>
 </tr>

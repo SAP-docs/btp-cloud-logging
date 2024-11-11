@@ -9,6 +9,7 @@ Use one or more of the following options to drain observability data in your Clo
 -   Ship via API
     -   [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md)
 
--   [Ingest via JSON API Endpoint](ingest-via-json-api-endpoint-3416f8f.md)
+    -   [Ingest via JSON API Endpoint](ingest-via-json-api-endpoint-3416f8f.md)
+
 -   [Rotate the Ingestion Root CA Certificate](rotate-the-ingestion-root-ca-certificate-bbcb3e7.md)
 
