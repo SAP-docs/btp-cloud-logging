@@ -33,3 +33,7 @@ The landing page provides pointers to a set of pre-built dashboards that help to
 
 You can now navigate across the dashboards, and set and pin filters to explore what you're interested in. For example, you can focus your search on a specific application, with specific response codes producing unexpectedly high response times.
 
+## Related Information
+
+-   Integrating with [SAP Alert Notification for SAP BTP](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/integrating-with-sap-cloud-logging-service)
+
