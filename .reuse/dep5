@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: SAP-docs/btp-cloud-logging
-Upstream-Contact: Bill Keyes (bill.keyes@sap.com)
-Source: https://github.com/sap-docs/btp-cloud-logging
-
-Files: *
-Copyright:  2023-2024 SAP SE or an SAP affiliate company and SAP-docs/btp-cloud-logging contributors
-License: CC-BY-4.0
