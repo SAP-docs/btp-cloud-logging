@@ -63,7 +63,7 @@ Go to *Applications & Resources*, choose *Applications*, and select your applica
     -   Continue with one of the following options. **OPTION 1** is recommended, as it removes the need to specify the IdP SAML application's assertion/logout URL.
     -   **OPTION 1:** Enable request signing.
         -   Create a new signing certificate and private key in PKCS8 format.
-            ⚠️ The following bash script does not work with Windows Powershell. For Windows users the usage of Windows Subsystem for Linux (WSL) is recommended.
+            ⚠️ The following script has to be executed using bash.
 
             ```bash
             # generate a certificate and a private key in PKCS8 format with a reasonable validity
