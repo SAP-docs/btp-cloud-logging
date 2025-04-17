@@ -70,8 +70,75 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
 
     You can use the endpoint and credentials to ship OpenTelemetry signals retrieved by one of the following instrumentation options: OpenTelemetry SDK, OpenTelemetry Agent, or OpenTelemetry Collector. See [OpenTelemetry documentation on instrumentation](https://opentelemetry.io/docs/concepts/instrumentation/) for more details.
 
+### Automated OpenTelemetry Exporter Configuration for Java and node.JS Applications in the Cloud Foundry Environment
 
+When you follow the procedure outlined above all newly created service bindings will contain the credentials required to configure OpenTelemetry instrumentations.
+The Cloud Logging team provides special instrumentation for Java and node.JS applications, that utilize OpenTelemetry instrumentation.
 
+#### OpenTelemetry Java Agent Extension for SAP BTP Observability
+
+If you are using the OpenTelemetry Java agent you can add the [BTP observability extension](https://github.com/SAP/cf-java-logging-support/tree/main/cf-java-logging-support-opentelemetry-agent-extension) to simplify shipment configuration to Cloud Logging.
+Follow the link for detailed information on the configuration.
+The extension provide new exporters `cloud-logging` for logs, metrics, and traces.
+These exporters scan the application's environment variables for service bindings to Cloud Logging.
+They automatically configures an OTLP exporter for each binding found.
+
+> ### Note:
+> The OpenTelemetry Java Agent Extension for SAP BTP Observability is part of the SAP Java Agent Extension delivered as part of the SAP Java buildpack. Using this extension allows integration with SAP Cloud ALM and SAP Cloud Logging in the same extension.
+
+#### OpenTelemetry exporter for SAP Cloud Logging for Node.JS
+
+If you instrumented your node.JS application with the OpenTelemetry SDK you can add the [Cloud Logging exporter](https://github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs) to simplify shipment configuration to Cloud Logging.
+Follow the link for detailed information on the configuration.
+The package provides exporters for logs, metrics, and traces.
+It scans the application's environment variables for service bindings to Cloud Logging.
+For each binding a OTLP exporter is configured.
+
+> ### Note:
+> The exporter is compatible with CAP and Cloud ALM libraries.
+
+#### Using user-provided Services
+
+The Java and node.JS instrumentations support automatic scanning for bindings to managed Cloud Logging service instances.
+They also support user-provided service instances, if those service instances are configured correctly.
+User-provided services must fulfil two criteria:
+
+1. The need to be tagged with label "Cloud Logging".
+2. The need to contain the OTLP credentials from a service key.
+3. Optionally, they can contain a syslog drain url, if log shipment of messages written to stdout/stderr is still required.
+
+The following example explains the creation of a user-provided service with valid configuration using the CloudFoundry CLI.
+
+When connected to teh source CF space which owns the managed Cloud Logging service instance that should receive the data execute the following command:
+
+```bash
+cf service-key cls test \
+| tail -n +2 \
+| jq '.credentials | {"ingest-otlp-endpoint":."ingest-otlp-endpoint", "ingest-otlp-cert":."ingest-otlp-cert", "ingest-otlp-key":."ingest-otlp-key", "server-ca":."server-ca"}' \
+> credentials.json
+```
+
+This creates a new service key named `test` and saves the credentials in the JSON file `credentials.json`.
+Now connect to the CF space, where you want to create the user-provided service.
+If necessary transfer the `credentials.json` accordingly.
+Create the user-provided service with the following command:
+
+```bash
+cf cups <your-service-name> -p credentials.json -t "Cloud Logging"
+```
+
+The `-t` option sets the correct tag and is required for the libraries to detect the service bindings.
+If you still need a syslog drain url, you can add it to the command via the argument `-l <your-syslog-drain-url>`.
+You can find the url in the service key created above.
+
+You can now bind applications to the user-provided service.
+They should start sending data to Cloud Logging after they are restaged.
+Both instrumentations will log the configured exporters during start-up.
+They will also emit error messages, if the configuration was incorrect.
+
+If you need to rotate the credentials, e.g., due to expiry of the certificates, create a new service key.
+Instead of creating a new user-provided service, you can update your user-provided service with the new credentials.
+To propagate the new credentials to the applications, they need to be restaged.
 
 <a name="loiofdc78af7c69246bc87315d90a061b321__section_kbr_nbd_dzb"/>
 
