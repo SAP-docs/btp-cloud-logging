@@ -72,8 +72,8 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
 
 ### Automated OpenTelemetry Exporter Configuration for Java and node.JS Applications in the Cloud Foundry Environment
 
-When you follow the procedure outlined above all newly created service bindings will contain the credentials required to configure OpenTelemetry instrumentations.
-The Cloud Logging team provides special instrumentation for Java and node.JS applications, that utilize OpenTelemetry instrumentation.
+This section describes streamlined ways to instrument Java and node.JS applications harmonized with other SAP offerings.
+This requires service bindings to contain the OpenTelemetry credentials, which is ensured for bindings created after following the above procedure.
 
 #### OpenTelemetry Java Agent Extension for SAP BTP Observability
 
