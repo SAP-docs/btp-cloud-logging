@@ -88,7 +88,7 @@ Go to *Applications & Resources*, choose *Applications*, and select your applica
 
 ### Create a Group and Assign Users
 
--   [Create a group](https://help.sap.com/docs/identity-authentication/identity-authentication/create-new-user-group) and named `admin_group` for the SAML configuration. This group gets administrative access in OpenSearch. It has permission to modify the security module.
+-   [Create a group](https://help.sap.com/docs/identity-authentication/identity-authentication/create-new-user-group) that you intend to use for administrative access to SAP Cloud Logging instances and provide the name of this group as the input value for `admin_group` during the SAML configuration. This group gets administrative access in OpenSearch. It has permission to modify the security module.
 
     > ### Note:  
     > The login procedure forwards Identity Authentication group names to OpenSearch as backend roles. Backend roles can map to OpenSearch roles that grant permissions to the users assigned to the respective Identity Authentication groups. The configuration parameter `admin_group` is mapped automatically to the "all\_access" role
