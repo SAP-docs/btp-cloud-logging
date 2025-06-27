@@ -128,6 +128,28 @@ Configures the data ingestion over the ingest-otlp endpoint \(OpenTelemetry Prot
 <tr>
 <td valign="top">
 
+feature\_flags
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+String Array 
+
+</td>
+<td valign="top">
+
+Used for enabling specific/experimental features specified as array: `"feature_flags": [ "feature-1", "feature 2" ]`. Please omit or keep empty by default. <br> Available feature flags: <br> `upgradeToOpenSearchV2` to use OpenSearch 2.19; note that an upgraded version can not be downgraded any more; [details here](https://me.sap.com/notes/3617458)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
 retention\_period
 
 </td>
