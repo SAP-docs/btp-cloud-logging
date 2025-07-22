@@ -697,3 +697,23 @@ Key to sign tokens. Provide a *random* key with an *even number \(min. length: 3
 </tr>
 </table>
 
+## Sample Configuration Parameters in JSON
+
+
+The following snippet shows a sample payload that could be used for a `standard` or `large` plan:
+
+```
+{
+  "backend": {
+    "max_data_nodes": 10
+  },
+  "dashboards": {
+    "custom_label": "My-Label"
+  },
+  "feature_flags": [ "upgradeToOpenSearchV2" ],
+  "ingest": {
+    "max_instances": 10
+  },
+  "retention_period": 14
+}
+```
