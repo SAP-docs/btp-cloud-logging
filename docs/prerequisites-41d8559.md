@@ -143,14 +143,14 @@ Parameterization
 </td>
 <td valign="top">
 
-Set IdP information `idp.metadata_url` and `idp.entity_id` from Obtain SAML 2.0 IdP Information step.
+Set IdP information `idp.metadata_url` (e.g.: `https://myaccount.accounts.ondemand.com/saml2/metadata`) and `idp.entity_id` (e.g. `https://myaccount.accounts.ondemand.com`) from Obtain SAML 2.0 IdP Information step.
 
 </td>
 </tr>
 <tr>
 <td valign="top">
 
-Set `sp.entity_id` from Create a SAML 2.0 application step.
+Set `sp.entity_id` from Create a SAML 2.0 application step (Do not confuse with `idp.entity_id`)
 
 </td>
 </tr>
