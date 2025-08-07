@@ -128,6 +128,34 @@ Configures the data ingestion over the ingest-otlp endpoint \(OpenTelemetry Prot
 <tr>
 <td valign="top">
 
+feature\_flags
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+String Array
+
+</td>
+<td valign="top">
+
+Used for enabling specific/experimental features specified as array:
+
+`"feature_flags": [ "feature-1", "feature 2" ]`. Please omit or keep empty by default.
+
+Available feature flags:
+
+`upgradeToOpenSearchV2` to use OpenSearch 2.19; note that an upgraded version can not be downgraded any more. See [3617458 - SAP Cloud Logging: OpenSearch Stack Update Available](https://me.sap.com/notes/3617458).
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
 retention\_period
 
 </td>
@@ -674,4 +702,29 @@ Key to sign tokens. Provide a *random* key with an *even number \(min. length: 3
 </td>
 </tr>
 </table>
+
+
+
+<a name="loio1830bca1b060484e9cfabc0e62472e8e__section_rgc_gm1_cgc"/>
+
+## Sample Configuration Parameters in JSON
+
+The following snippet shows a sample payload that could be used for a `standard` or `large` plan:
+
+> ### Sample Code:  
+> ```
+> {
+>   "backend": {
+>     "max_data_nodes": 10
+>   },
+>   "dashboards": {
+>     "custom_label": "My-Label"
+>   },
+>   "feature_flags": [ "upgradeToOpenSearchV2" ],
+>   "ingest": {
+>     "max_instances": 10
+>   },
+>   "retention_period": 14
+> }
+> ```
 
