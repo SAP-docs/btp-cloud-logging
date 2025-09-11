@@ -32,7 +32,9 @@ See [Prerequisites](prerequisites-41d8559.md).
                "api_enabled": false
             },
             "ingest": {
-               "max_instances":  10
+               "max_instances":  10,
+               "min_instances": 2
+
             }
          }'
         
