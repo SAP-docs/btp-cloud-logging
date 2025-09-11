@@ -405,7 +405,7 @@ Integer
 </td>
 <td valign="top">
 
-Specifies the minimum number Fluentd instances which are always provisioned regardless of auto-scaling. Utilized to guarantee a minimum number of running instances, support predictable workloads, and mitigate autoscaling lag during sudden ingestion bursts. Must be between `2` and `10` and less than or equals to `max_instances`. Default is `2`. This parameter has no effect on the *dev* plan, which is limited to a single instance. If `max_instances` is smaller than `min_instances`, both parameters will be set to the value of `max_instances` (= no autoscaling).
+Specifies the minimum number ingest instances which are always provisioned regardless of auto-scaling. Utilized to guarantee a minimum number of running instances, support predictable workloads, and mitigate autoscaling lag during sudden ingestion bursts. Must be between `2` and `10` and less than or equals to `max_instances`. Default is `2`. This parameter has no effect on the *dev* plan, which is limited to a single instance. If `max_instances` is smaller than `min_instances`, both parameters will be set to the value of `max_instances` (= no autoscaling).
 
 </td>
 </tr>
@@ -745,8 +745,7 @@ The following snippet shows a sample payload that could be used for a `standard`
 >   },
 >   "feature_flags": [ "upgradeToOpenSearchV2" ],
 >   "ingest": {
->     "max_instances": 10,
->     "min_instances": 2
+>     "max_instances": 10
 >   },
 >   "retention_period": 14
 > }
