@@ -33,7 +33,6 @@ See [Prerequisites](prerequisites-41d8559.md).
             },
             "ingest": {
                "max_instances":  10
-
             }
          }'
         
