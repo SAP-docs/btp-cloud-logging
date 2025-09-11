@@ -58,7 +58,6 @@
              retentionPeriod: 14
              ingest:
                 max_instances: 10
-
     
     ```
 
