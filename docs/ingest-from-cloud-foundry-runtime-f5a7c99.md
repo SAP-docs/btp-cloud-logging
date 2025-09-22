@@ -27,7 +27,6 @@ Shipping logs from applications deployed on SAP BTP Cloud Foundry can be configu
 -   We recommend you use one of the Cloud Foundry open source logging libraries \([Java](https://github.com/SAP/cf-java-logging-support)/[NodeJS](https://github.com/SAP/cf-nodejs-logging-support)\) to configure logging within your application.
 
 
-
 ### Bind the Application to the Service Instance
 
 **Bind the Application Using the Command Line Interface**
@@ -52,7 +51,6 @@ Shipping logs from applications deployed on SAP BTP Cloud Foundry can be configu
 3.  Go to the [Result](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__section_gvg_4k4_xyb) section.
 
 
-
 ### Share Service Instance Across Different Spaces
 
 You can share a single service instance across multiple spaces. Skip this step if you don't need to share a single instance across multiple spaces of the same org.
@@ -69,7 +67,7 @@ You can share a single service instance across multiple spaces. Skip this step i
 > ### Note:  
 > Be careful when deleting service keys. Credentials are invalidated if the service key is deleted, and there is no automated mechanism to track in which user provided services instances the information of a service key is used.
 
-
+Please read the blog post that outlines different contexts, tools, options, and best practices for instance sharing in CF: <https://community.sap.com/t5/technology-blog-posts-by-sap/instance-sharing-sap-cloud-logging/ba-p/14179941>
 
 ### Bind the Application to a User Provided Service
 
