@@ -382,7 +382,7 @@ Integer
 </td>
 <td valign="top">
 
-Specifies the maximum number of provisionable ingest instances, which are scaled automatically based on their overall CPU and memory utilization. Must be between `2` and `10`. Defaults to `2`. This parameter impacts peak throughput and buffering. Scale-out happens when the overall CPU utilization exceeds 80%. Scale-in happens when the overall CPU utilization or configuration parameter decreases. This parameter has no effect on the *dev* plan, which is limited to a single instance.
+Specifies the maximum number of provisionable ingest instances, which are scaled automatically based on their overall CPU and memory utilization. Must be between `2` and `10`. Defaults to `10`. This parameter impacts peak throughput and buffering. Scale-out happens when the overall CPU utilization exceeds 80%. Scale-in happens when the overall CPU utilization or configuration parameter decreases. This parameter has no effect on the *dev* plan, which is limited to a single instance.
 
 </td>
 </tr>
