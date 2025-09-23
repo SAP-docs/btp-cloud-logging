@@ -67,7 +67,7 @@ You can share a single service instance across multiple spaces. Skip this step i
 > ### Note:  
 > Be careful when deleting service keys. Credentials are invalidated if the service key is deleted, and there is no automated mechanism to track in which user provided services instances the information of a service key is used.
 
-Please read the related [blog post](https://community.sap.com/t5/technology-blog-posts-by-sap/instance-sharing-sap-cloud-logging/ba-p/14179941) that outlines different contexts, tools, options, and best practices for instance sharing in CF
+For more information about different contexts, tools, options, and best practices for instance sharing in Cloud Foundry, see [Instance Sharing - SAP Cloud Logging](https://community.sap.com/t5/technology-blog-posts-by-sap/instance-sharing-sap-cloud-logging/ba-p/14179941).
 
 ### Bind the Application to a User Provided Service
 
