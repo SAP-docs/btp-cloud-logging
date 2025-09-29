@@ -119,5 +119,5 @@ For more information about different contexts, tools, options, and best practice
 
 ## Result
 
-The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on default dashboards or the the `logs-cfsyslog-*` index pattern for logs and `metrics-otel-v1-*` index pattern for resource metrics.
+The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based the `logs-cfsyslog-*` index pattern for logs and `metrics-otel-v1-*` index pattern for resource metrics.
 
