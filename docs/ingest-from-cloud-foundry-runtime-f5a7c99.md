@@ -2,9 +2,7 @@
 
 # Ingest from Cloud Foundry Runtime
 
-Shipping logs from applications deployed on SAP BTP Cloud Foundry can be configured in different ways. Even without any specific application logs, you can analyze your applications based on the automatically issued request logs from the Cloud Foundry router. Further, you can benefit from default contents, such as dashboards, index patterns, and retention settings.
-
-
+Shipping logs and resource usage metrics from applications deployed on SAP BTP Cloud Foundry can be configured in different ways. Even without any specific application logs, you can analyze your applications based on the automatically issued request logs from the Cloud Foundry router. Further, you can benefit from default contents, such as dashboards, index patterns, and retention settings.
 
 > ### Note:  
 > You can also [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md).
@@ -13,8 +11,6 @@ Shipping logs from applications deployed on SAP BTP Cloud Foundry can be configu
 > Ensure that you consider [SAP BTP Security Recommendation BTP-CLS-0002](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0002).
 
 All configuration steps can be done either using SAP BTP Cockpit or the Cloud Foundry Command Line Interface.
-
-
 
 <a name="loiof5a7c993743c4ee79722479371b90b37__section_fbf_yc4_xyb"/>
 
@@ -100,7 +96,7 @@ For more information about different contexts, tools, options, and best practice
 5.  Create a user provided service using the following the template filled with the values of the previous step and a user-provided-service-name of your choice:
 
     ```
-    cf cups <user-provided-service-name> -l https://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog
+    cf cups <user-provided-service-name> -l https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
     ```
 
 6.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
@@ -112,7 +108,7 @@ For more information about different contexts, tools, options, and best practice
 3.  Create a User-Provided Service following [Creating User-Provided Service Instances in Cloud Foundry Environment](https://help.sap.com/docs/service-manager/sap-service-manager/creating-user-provided-service-instances-in-cloud-foundry-environment) using `Instance Name` of your choice and the information from the the service key to configure `System Logs Drain URL`:
 
     ```
-    https://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog
+    https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
     ```
 
 4.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
@@ -123,5 +119,5 @@ For more information about different contexts, tools, options, and best practice
 
 ## Result
 
-The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on the `logs-cfsyslog-*` index pattern.
+The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on default dashboards or the the `logs-cfsyslog-*` index pattern for logs and `metrics-otel-v1-*` index pattern for resource metrics.
 
