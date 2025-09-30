@@ -2,7 +2,7 @@
 
 # Ingest from Cloud Foundry Runtime
 
-Shipping logs and resource usage metrics from applications deployed on SAP BTP Cloud Foundry can be configured in different ways. Even without any specific application logs, you can analyze your applications based on the automatically issued request logs from the Cloud Foundry router. Further, you can benefit from default contents, such as dashboards, index patterns, and retention settings.
+You can configure shipping logs and resource usage metrics from applications deployed on SAP BTP Cloud Foundry in various ways. Even if you don't have specific application logs, you can analyze your applications using the automatically generated request logs from the Cloud Foundry router. Additionally, you benefit from default contents: dashboards, index patterns, and retention settings.
 
 > ### Note:  
 > You can also [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md).
@@ -119,5 +119,5 @@ For more information about different contexts, tools, options, and best practice
 
 ## Result
 
-The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on the `logs-cfsyslog-*` index pattern for logs and `metrics-otel-v1-*` index pattern for resource metrics.
+The ingested data can be analyzed in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on the `logs-cfsyslog-*` index pattern for logs and the `metrics-otel-v1-*` index pattern for resource metrics.
 
