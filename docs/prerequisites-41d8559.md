@@ -63,8 +63,9 @@ Go to *Applications & Resources*, choose *Applications*, and select your applica
     -   Continue with one of the following options. **OPTION 1** is recommended, as it removes the need to specify the IdP SAML application's assertion/logout URL.
     -   **OPTION 1:** Enable request signing.
         -   Create a new signing certificate and private key in PKCS8 format.
+            ⚠️ You need to execute the following script using bash.
 
-            ```
+            ```bash
             # generate a certificate and a private key in PKCS8 format with a reasonable validity
             openssl req -x509 -newkey rsa:2048 -keyout private.key -out cert.pem -nodes -days <validity>
             # add a password (encrypted)
