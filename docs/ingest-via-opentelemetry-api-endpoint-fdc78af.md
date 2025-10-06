@@ -50,7 +50,7 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
           "-----BEGIN CERTIFICATE-----\n
            Your instance server certificate in PEM format\n
            -----END CERTIFICATE-----\n",
-      }
+       }
     }
     ```
 
@@ -115,7 +115,7 @@ When connected to teh source CF space which owns the managed Cloud Logging servi
 > ```
 > cf service-key cls test \
 > | tail -n +2 \
-> | jq '.credentials | {"ingest-otlp-endpoint":."ingest-otlp-endpoint", "ingest-otlp-cert":."ingest-otlp-cert", "ingest-otlp-key":."ingest-otlp-key", "server-ca":."server-ca"}' \
+> | jq '.credentials' \
 > > credentials.json
 > ```
 
