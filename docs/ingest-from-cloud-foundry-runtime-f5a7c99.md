@@ -93,43 +93,48 @@ For more information about different contexts, tools, options, and best practice
     cf service-key <service-instance> <service-key>
     ```
 
-5.  (a) Create a user provided service using the following the template filled with the values of the previous step and a user-provided-service-name of your choice:
+5.  Create the User Provided Service (using either simple basic auth or mTLS):
 
-    ```
+    a) Simple basic auth configuration:
+
+    Create a user provided service using the following the template filled with the values of the previous step and a user-provided-service-name of your choice:
+
+    ```bash
     cf cups <user-provided-service-name> -l https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
     ```
 
-    (b) **Use mTLS if required:**
+    b) mtls-enabled configuration:
 
-    Use this if you need mTLS. You still embed the basic auth username/password into the drain URL, while the certificate material is supplied separately as parameters.
+    1. Extract the following fields from the binding JSON:
+        - ingest-username
+        - ingest-password
+        - ingest-mtls-endpoint
+        - ingest-mtls-cert
+        - ingest-mtls-key
+        - server-ca
 
-    5.1 Prerequisites
-    - You have obtained the binding JSON (cf service-key <service-instance> <service-key>).
+    2. Prepare the JSON payload for cf cups. (Newlines must be escaped if passed inline)
+        ```json
+        creds_payload.json:
+        {
+        "ca": "<server-ca>",
+        "cert": "<ingest-mtls-cert>",
+        "key": "<ingest-mtls-key>"
+        }
+        ```
+        You can also create the payload file using the following command:
+        ```bash
+        cf service-key <service-instance> <service-key> \
+        | jq '.credentials | {ca: ."server-ca", cert: ."ingest-mtls-cert", key: ."ingest-mtls-key"}' \
+        > creds_payload.json
+        ```
 
-    5.2 Extract the following fields from the binding JSON:
-    - ingest-username
-    - ingest-password
-    - ingest-mtls-endpoint
-    - ingest-mtls-cert
-    - ingest-mtls-key
-    - server-ca
-
-    5.3 Prepare the JSON payload for cf cups. (Newlines must be escaped if passed inline)
-    ```json
-    creds_payload.json:
-    {
-      "ca": "<server-ca>",
-      "cert": "<ingest-mtls-cert>",
-      "key": "<ingest-mtls-key>"
-    }
-    ```
-
-    5.4 Create the mTLS-enabled user provided service:
-    ```bash
-    cf cups <user-provided-service-name> \
-      -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-data=all" \
-      -p creds_payload.json
-    ```
+    3. Create the mTLS-enabled user provided service:
+        ```bash
+        cf cups <user-provided-service-name> \
+        -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-type=all" \
+        -p creds_payload.json
+        ```
 
 6.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
 
@@ -138,14 +143,10 @@ For more information about different contexts, tools, options, and best practice
 1.  [Log On to the Cloud Foundry Environment Using the SAP BTP Cockpit](https://help.sap.com/docs/btp/sap-business-technology-platform/cloud-foundry-environment).
 2.  Create a service key according to [Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html).
 3.  Create a User-Provided Service following [Creating User-Provided Service Instances in Cloud Foundry Environment](https://help.sap.com/docs/service-manager/sap-service-manager/creating-user-provided-service-instances-in-cloud-foundry-environment) using `Instance Name` of your choice and the information from the the service key to configure `System Logs Drain URL`:
-
     ```
     https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
     ```
-
 4.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
-
-
 
 <a name="loiof5a7c993743c4ee79722479371b90b37__section_gvg_4k4_xyb"/>
 
