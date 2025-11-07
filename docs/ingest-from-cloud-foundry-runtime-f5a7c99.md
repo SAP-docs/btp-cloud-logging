@@ -133,7 +133,7 @@ For more information about different contexts, tools, options, and best practice
         ```bash
         cf cups <user-provided-service-name> \
         -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-type=all" \
-        -p creds_payload.json
+        -p credentials.json
         ```
 
 6.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
