@@ -126,7 +126,7 @@ For more information about different contexts, tools, options, and best practice
         ```bash
         cf service-key <service-instance> <service-key> \
         | jq '.credentials | {ca: ."server-ca", cert: ."ingest-mtls-cert", key: ."ingest-mtls-key"}' \
-        > creds_payload.json
+        > credentials.json
         ```
 
     3. Create the mTLS-enabled user-provided service:
