@@ -97,7 +97,7 @@ For more information about different contexts, tools, options, and best practice
 
     a) Simple basic auth configuration:
 
-    Create a user provided service using the following the template filled with the values of the previous step and a user-provided-service-name of your choice:
+    To create a user-provided service, use the following template, filled with the values from the previous step and a of your choice:
 
     ```bash
     cf cups <user-provided-service-name> -l https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
