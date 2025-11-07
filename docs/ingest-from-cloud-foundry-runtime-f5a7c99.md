@@ -115,7 +115,7 @@ For more information about different contexts, tools, options, and best practice
 
     2. Prepare the JSON payload for cf cups. (Newlines must be escaped if passed inline)
         ```json
-        creds_payload.json:
+        credentials.json:
         {
         "ca": "<server-ca>",
         "cert": "<ingest-mtls-cert>",
