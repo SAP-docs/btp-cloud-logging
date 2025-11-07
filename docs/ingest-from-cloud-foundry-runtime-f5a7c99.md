@@ -129,7 +129,7 @@ For more information about different contexts, tools, options, and best practice
         > creds_payload.json
         ```
 
-    3. Create the mTLS-enabled user provided service:
+    3. Create the mTLS-enabled user-provided service:
         ```bash
         cf cups <user-provided-service-name> \
         -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-type=all" \
