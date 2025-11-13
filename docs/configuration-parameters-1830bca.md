@@ -702,28 +702,6 @@ The private key used to sign the requests. Valid base64 encoded and PKCS8 format
 
 </td>
 </tr>
-<tr>
-<td valign="top">
-
-exchange\_key
-
-</td>
-<td valign="top">
-
-No
-
-</td>
-<td valign="top">
-
-String
-
-</td>
-<td valign="top">
-
-Key to sign tokens. Provide a *random* key with an *even number \(min. length: 32\)* of *alphanumeric characters \(A-Z, a-z, 0-9\)*. A random key is generated if the key isn't provided.
-
-</td>
-</tr>
 </table>
 
 
