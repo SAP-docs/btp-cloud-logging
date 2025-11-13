@@ -132,8 +132,7 @@ Parameterization
         "entity_id": "",
         "signature_private_key": "",
         "signature_private_key_password": ""
-     },
-     "exchange_key": ""
+     }
   }
 
 ```
@@ -165,13 +164,6 @@ Set `admin_group` from Configure a SAML 2.0 application step.
 <td valign="top">
 
 Set `sp.signature_private_key` and `sp.signature_private_key_password` if you selected OPTION 1 in the Configure SAML 2.0 application step.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-Add `exchange_key` to sign tokens, or remove line. Provide a random key with an even character length \(minimum length: 32\) of alphanumeric characters \(A-Z, a-z, 0-9\). The system generates a random key if the key is not specified.
 
 </td>
 </tr>
