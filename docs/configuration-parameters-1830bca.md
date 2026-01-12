@@ -147,9 +147,7 @@ Used for enabling specific/experimental features specified as array:
 
 `"feature_flags": [ "feature-1", "feature 2" ]`. Please omit or keep empty by default.
 
-Available feature flags:
-
-`upgradeToOpenSearchV2` to use OpenSearch 2.19; note that an upgraded version can not be downgraded any more. See [3617458 - SAP Cloud Logging: OpenSearch Stack Update Available](https://me.sap.com/notes/3617458).
+Currently, there are no available feature flags.
 
 </td>
 </tr>
@@ -698,7 +696,7 @@ String
 </td>
 <td valign="top">
 
-The private key used to sign the requests. Valid base64 encoded and PKCS8 format of private key.
+The password of the signing key, if it is encrypted.
 
 </td>
 </tr>
@@ -721,7 +719,7 @@ The following snippet shows a sample payload that could be used for a `standard`
 >   "dashboards": {
 >     "custom_label": "My-Label"
 >   },
->   "feature_flags": [ "upgradeToOpenSearchV2" ],
+>   "feature_flags": [],
 >   "ingest": {
 >     "max_instances": 10
 >   },
