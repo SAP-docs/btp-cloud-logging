@@ -1,6 +1,6 @@
 version = 1
 SPDX-PackageName = "SAP-docs/btp-cloud-logging"
-SPDX-PackageSupplier = "Madeline Schaefer (madeline.schaefer@sap.com)"
+SPDX-PackageSupplier = "Maksimiliana Petrova (maksimiliana.petrova@sap.com)"
 SPDX-PackageDownloadLocation = "https://github.com/sap-docs/btp-cloud-logging"
 
 [[annotations]]
