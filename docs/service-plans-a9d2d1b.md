@@ -43,5 +43,5 @@ The `standard` plan targets usage in production. It incorporates data replicatio
 The `large` plan targets usage in production. It incorporates data replication and enables automatic scaling of net storage capacity from 750 GiB to 3.75 TiB.
 
 > ### Example:  
-> If the average ingest rate is 1000x 2 KiB logs per second, a single large plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
+> If the average ingest rate is 1000 x 2 KiB logs per second, a single large plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
 
