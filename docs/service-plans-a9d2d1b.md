@@ -32,7 +32,7 @@ The `dev` plan is only for evaluation purposes. It must not be used in productio
 The `standard` plan targets usage in production. It incorporates data replication, and enables automatic scaling of net storage capacity from 75 GiB to 375 GiB.
 
 > ### Example:  
-> If the average ingest rate is 100x 2 KiB logs per second, a single standard plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
+> If the average ingest rate is 100 x 2 KiB logs per second, a single standard plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
 
 
 
