@@ -21,7 +21,7 @@ To get an overview on the availability of SAP Cloud Logging according to region,
 
 ## Development Plan
 
-The `dev` plan is only for evaluation purposes. It must not be used in production use cases, as it lacks cloud qualities. It also doesn't include auto-scaling or data replication, and has limited ingestion throughput. Therefore it isn't suitable for testing loads exceeding its 7.5 GB-storage capacity.
+The `dev` plan is only for evaluation purposes. It must not be used in production use cases, as it lacks cloud qualities. It also doesn't include auto-scaling or data replication, and has limited ingestion throughput. Therefore it isn't suitable for testing loads exceeding its 7.5 GiB storage capacity.
 
 
 
@@ -29,10 +29,10 @@ The `dev` plan is only for evaluation purposes. It must not be used in productio
 
 ## Standard Plan
 
-The `standard` plan targets usage in production. It incorporates data replication, and enables automatic scaling of net storage capacity from 75 GB to 375 GB.
+The `standard` plan targets usage in production. It incorporates data replication, and enables automatic scaling of net storage capacity from 75 GiB to 375 GiB.
 
 > ### Example:  
-> If the average ingest rate is 100x 2 kB logs per second, a single standard plan instance can sustain storage for approximately 8 to 43 days, depending on the specific scaling configuration.
+> If the average ingest rate is 100 x 2 KiB logs per second, a single standard plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
 
 
 
@@ -40,8 +40,8 @@ The `standard` plan targets usage in production. It incorporates data replicatio
 
 ## Large Plan
 
-The `large` plan targets usage in production. It incorporates data replication and enables automatic scaling of net storage capacity from 750 GB to 3.75 TB.
+The `large` plan targets usage in production. It incorporates data replication and enables automatic scaling of net storage capacity from 750 GiB to 3.75 TiB.
 
 > ### Example:  
-> If the average ingest rate is 1000x 2 kB logs per second, a single large plan instance can sustain storage for approximately 8 to 43 days, depending on the specific scaling configuration.
+> If the average ingest rate is 1000 x 2 KiB logs per second, a single large plan instance can sustain storage for approximately 7 to 34 days, depending on the specific scaling configuration and including indexing and compression factors.
 
