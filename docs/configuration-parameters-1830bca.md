@@ -176,6 +176,28 @@ The time in days until data \(see [Ingest Observability Data](ingest-observabili
 <tr>
 <td valign="top">
 
+oidc
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+[oidc](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_oidc)
+
+</td>
+<td valign="top">
+
+Configures the OIDC Integration to authenticate in dashboards.
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
 saml
 
 </td>
@@ -186,7 +208,7 @@ No
 </td>
 <td valign="top">
 
-[saml](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_nrv_sjx_jzb) 
+[saml](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_nrv_sjx_jzb)
 
 </td>
 <td valign="top">
@@ -481,6 +503,228 @@ Boolean
 <td valign="top">
 
 Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more information, refer to [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md).
+
+</td>
+</tr>
+</table>
+
+
+
+<a name="loio1830bca1b060484e9cfabc0e62472e8e__table_oidc"/>
+
+## Configuration Parameters for `oidc`
+
+Configuration options for OIDC Integration. For more information refer to [OIDC Integration](integrate-sap-cloud-identity-services-oidc.md).
+
+
+<table>
+<tr>
+<th valign="top">
+
+Name
+
+</th>
+<th valign="top">
+
+Required
+
+</th>
+<th valign="top">
+
+Type
+
+</th>
+<th valign="top">
+
+Description
+
+</th>
+</tr>
+<tr>
+<td valign="top">
+
+enabled
+
+</td>
+<td valign="top">
+
+Yes
+
+</td>
+<td valign="top">
+
+Boolean
+
+</td>
+<td valign="top">
+
+Set to `true` to enable OpenID Connect authentication. Cannot be disabled with update service if once enabled.
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+admin\_group
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The OpenID group that you want to grant administrative access to. It will have permissions to modify the security module. Required if *enabled* is set to `true`.
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+roles\_key
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The key in the JSON payload that stores the user's roles. The value of this key must be a comma-separated list of roles. For example: `groups` or `roles`. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: Configure OpenID Connect integration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+subject\_key
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The key in the JSON payload that stores the user's name. For example: `email` or `last_name`. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: Configure OpenID Connect integration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+openid\_connect\_url
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+URL
+
+</td>
+<td valign="top">
+
+The URL of your IdP where the security plugin can find the OpenID Connect metadata/configuration settings. Usually ends in `/.well-known/openid-configuration`. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: OpenID Connect URL](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+openid\_client\_id
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The ID of the OpenID Connect client configured in your IdP. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+openid\_client\_secret
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The client secret of the OpenID Connect client configured in your IdP. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+openid\_scopes
+
+</td>
+<td valign="top">
+
+Required
+
+</td>
+<td valign="top">
+
+String
+
+</td>
+<td valign="top">
+
+The scope of the identity token issued by the IdP. Space-separated string list if more than one. For example: `"openid"`. Required if *enabled* is set to `true`.
+
+[OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
 </td>
 </tr>
