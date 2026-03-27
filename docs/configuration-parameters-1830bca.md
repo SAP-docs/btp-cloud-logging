@@ -558,7 +558,7 @@ Boolean
 </td>
 <td valign="top">
 
-Set to `true` to enable OpenID Connect authentication. Cannot be disabled with update service if once enabled.
+Set to `true` to enable OpenID Connect authentication.
 
 </td>
 </tr>
