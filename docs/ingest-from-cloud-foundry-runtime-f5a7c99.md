@@ -103,7 +103,7 @@ For more information about different contexts, tools, options, and best practice
     To create a user-provided service, use the following template, filled with the values from the previous step and a <user-provided-service-name> of your choice:
 
     ```bash
-    cf cups <user-provided-service-name> -l https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
+    cf cups <user-provided-service-name> -l https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-data=all
     ```
 
     b) mtls-enabled configuration:
@@ -135,7 +135,7 @@ For more information about different contexts, tools, options, and best practice
     3. Create the mTLS-enabled user-provided service:
         ```bash
         cf cups <user-provided-service-name> \
-        -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-type=all" \
+        -l "https-batch://<ingest-username>:<ingest-password>@<ingest-mtls-endpoint>/cfsyslog?drain-data=all" \
         -p credentials.json
         ```
 
@@ -147,7 +147,7 @@ For more information about different contexts, tools, options, and best practice
 2.  Create a service key according to [Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html).
 3.  Create a User-Provided Service following [Creating User-Provided Service Instances in Cloud Foundry Environment](https://help.sap.com/docs/service-manager/sap-service-manager/creating-user-provided-service-instances-in-cloud-foundry-environment) using `Instance Name` of your choice and the information from the the service key to configure `System Logs Drain URL`:
     ```
-    https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-type=all
+    https-batch://<ingest-username>:<ingest-password>@<ingest-endpoint>/cfsyslog?drain-data=all
     ```
 4.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
 
