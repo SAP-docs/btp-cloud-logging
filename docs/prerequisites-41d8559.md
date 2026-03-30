@@ -48,7 +48,7 @@ Obtain SAML 2.0 Identity Provider \(IdP\) Information based on the [Identity Aut
 
 ### Create a SAML 2.0 application
 
-Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authorization guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application) and note down the `sp.entity_id` value as name of the SAML 2.0 application.
+Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authorization guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application). The `sp.entity_id` value  refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application.
 
 
 
@@ -164,6 +164,14 @@ Set `admin_group` from Configure a SAML 2.0 application step.
 <td valign="top">
 
 Set `sp.signature_private_key` and `sp.signature_private_key_password` if you selected OPTION 1 in the Configure SAML 2.0 application step.
+The sp.entity_id value refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Set `sp.entity_id` value according to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application
 
 </td>
 </tr>
