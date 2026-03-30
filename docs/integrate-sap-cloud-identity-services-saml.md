@@ -15,7 +15,7 @@ This explains how to integrate with SAP Cloud Identity Services - Identity Authe
 
 ## Obtain SAML 2.0 IdP Information
 
-Obtain SAML 2.0 Identity Provider \(IdP\) Information based on the [Identity Authorization guide](https://help.sap.com/docs/identity-authentication/identity-authentication/tenant-saml-2-0-configuration). Use the console URL to access the tenant’s administration console for the Identity Authentication service. The URL has a `https://<tenantID>.accounts.ondemand.com/admin` pattern.
+Obtain SAML 2.0 Identity Provider \(IdP\) Information based on the [Identity Authentication guide](https://help.sap.com/docs/identity-authentication/identity-authentication/tenant-saml-2-0-configuration). Use the console URL to access the tenant’s administration console for the Identity Authentication service. The URL has a `https://<tenantID>.accounts.ondemand.com/admin` pattern.
 
 -   Note down the `idp.metadata_url` information as `https://<tenant ID>.accounts.ondemand.com/saml2/metadata` 
 -   Note down the `idp.entity_id`. Open the metadata URL in your browser and copy the full value of the entityID field, which is located in the first line of the response.
@@ -24,7 +24,7 @@ Obtain SAML 2.0 Identity Provider \(IdP\) Information based on the [Identity Aut
 
 ## Create a SAML 2.0 application
 
-Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authorization guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application). The `sp.entity_id` value  refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application.
+Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authentication guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application). The `sp.entity_id` value  refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application.
 
 
 
