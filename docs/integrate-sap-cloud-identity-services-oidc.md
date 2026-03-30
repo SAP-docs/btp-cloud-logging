@@ -1,7 +1,7 @@
 # Integrate SAP Cloud Identity Services - Identity Authentication OpenID Connect with SAP Cloud Logging
 
 > ## Caution:  
-> Ensure that you consider the [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
+> Ensure that you consider [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
 
 This explains how to integrate with SAP Cloud Identity Services - Identity Authentication OpenID Connect. It results in changes in the Identity Authentication tenant and a corresponding OIDC configuration to be used for creating or updating SAP Cloud Logging instances. Access to the Identity Authentication administration console as an administrator is a prerequisite.
 
@@ -15,7 +15,7 @@ This explains how to integrate with SAP Cloud Identity Services - Identity Authe
 
 ## Obtain OpenID Connect IdP Information
 
-Obtain OpenID Connect Identity Provider \(IdP\) Information based on the [Identity Authorization guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/create-openid-connect-application). Use the console URL to access the tenant’s administration console for the Identity Authentication service. The URL has a `https://<tenantID>.accounts.ondemand.com/admin` pattern.
+Obtain OpenID Connect Identity Provider \(IdP\) Information based on the [Identity Authentication guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/create-openid-connect-application). Use the console URL to access the tenant’s administration console for the Identity Authentication service. The URL has a `https://<tenantID>.accounts.ondemand.com/admin` pattern.
 
 -   Note down the `openid_connect_url` information as `https://<tenant ID>.accounts.ondemand.com/.well-known/openid-configuration` 
 
@@ -23,7 +23,7 @@ Obtain OpenID Connect Identity Provider \(IdP\) Information based on the [Identi
 
 ## Create an OpenID Connect application
 
-Create an OpenID Connect application in your Identity Authentication account based on the [Identity Authorization guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/create-openid-connect-application). Create OpenID client secrets based on the [Configuration Guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/auth-configure-secrets-for-api-authentication)
+Create an OpenID Connect application in your Identity Authentication account based on the [Identity Authentication guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/create-openid-connect-application). Create OpenID client secrets based on the [Configuration Guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/auth-configure-secrets-for-api-authentication)
 
 
 
@@ -32,7 +32,7 @@ Create an OpenID Connect application in your Identity Authentication account bas
 Go to *Applications & Resources*, choose *Applications*, and select your application from the list. Then perform the following steps to configure the OpenID Connect application within Identity Authentication:
 
 1.  [Configure a Self-Defined Attribute](https://help.sap.com/docs/identity-authentication/identity-authentication/user-attributes?version=Cloud) with *Name* "groups," *Source* "Identity Directory," and *Value* "All Groups."
-2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) to *E-mail*.
+2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) to *Email*.
 3.  Select *OpenID Connect Configuration* and *Configure Manually*.
     -   This step can only be done after an SAP Cloud Logging instance has been created and has to be repeated for each new service instance.
         -   Set `Redirect URI` to the OpenSearch Dashboards URL plus`/auth/openid/login`.
@@ -94,7 +94,7 @@ Parameterization
 </td>
 <td valign="top">
 
-Set IdP information `openid_connect_url` \(e.g.: `https://myaccount.accounts.ondemand.com/.well-known/openid-configuration`\).
+Set IdP information `openid_connect_url` \(for example: `https://myaccount.accounts.ondemand.com/.well-known/openid-configuration`\).
 
 </td>
 </tr>
