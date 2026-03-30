@@ -1,7 +1,7 @@
 # Integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 with SAP Cloud Logging
 
 > ## Caution:  
-> Ensure that you consider the [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
+> Ensure that you consider [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
 
 This explains how to integrate with SAP Cloud Identity Services - Identity Authentication SAML 2.0. It results in changes in the Identity Authentication tenant and a corresponding SAML configuration to be used for creating or updating SAP Cloud Logging instances. Access to the Identity Authentication administration console as an administrator is a prerequisite.
 
@@ -33,7 +33,7 @@ Create a SAML 2.0 application in your Identity Authentication account based on t
 Go to *Applications & Resources*, choose *Applications*, and select your application from the list. Then perform the following steps to configure the SAML 2.0 application within Identity Authentication:
 
 1.  [Configure a Self-Defined Attribute](https://help.sap.com/docs/identity-authentication/identity-authentication/user-attributes?version=Cloud) with *Name* "groups," *Source* "Identity Directory," and *Value* "All Groups."
-2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) to *E-mail*.
+2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) to *Email*.
 3.  Select *SAML 2.0 Configuration* and *Configure Manually*.
     -   Set the name with value of the `sp.entity_id` from the Create a SAML 2.0 application step.
     -   Continue with one of the following options. **OPTION 1** is recommended, as it removes the need to specify the IdP SAML application's assertion/logout URL.
@@ -118,21 +118,21 @@ Parameterization
 </td>
 <td valign="top">
 
-Set IdP information `idp.metadata_url` \(e.g.: `https://myaccount.accounts.ondemand.com/saml2/metadata`\) and `idp.entity_id` \(e.g. `https://myaccount.accounts.ondemand.com`\) from Obtain SAML 2.0 IdP Information step.
+Set IdP information `idp.metadata_url` \(for example: `https://myaccount.accounts.ondemand.com/saml2/metadata`\) and `idp.entity_id` \(for example: `https://myaccount.accounts.ondemand.com`\) from Obtain SAML 2.0 IdP Information step.
 
 </td>
 </tr>
 <tr>
 <td valign="top">
 
-Set `sp.entity_id` from Create a SAML 2.0 application step \(Do not confuse with `idp.entity_id`\)
+Set `sp.entity_id` from Create the SAML 2.0 application step \(Do not confuse with `idp.entity_id`\)
 
 </td>
 </tr>
 <tr>
 <td valign="top">
 
-Set `admin_group` from Configure a SAML 2.0 application step.
+Set `admin_group` from Create a Group and Assign Users step.
 
 </td>
 </tr>
