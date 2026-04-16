@@ -1,11 +1,14 @@
-# SAP Cloud Logging
+# SAP Cloud Logging\(Internal\)
 
 SAP Cloud Logging service is an instance-based and environment-agnostic observability service that builds upon OpenSearch.
 
 -   [What Is SAP Cloud Logging?](what-is-sap-cloud-logging-8342176.md)
+-   [What's New in SAP Cloud Logging?](what-s-new-in-sap-cloud-logging-351197c.md)
 -   [Service Plans](service-plans-a9d2d1b.md)
 -   [Initial Setup](initial-setup-ac50297.md)
     -   [Prerequisites](prerequisites-41d8559.md)
+        -   [Integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 with SAP Cloud Logging](integrate-sap-cloud-identity-services-identity-authentication-saml-2-0-with-sap-cloud-log-d7f0258.md)
+        -   [Integrate SAP Cloud Identity Services - Identity Authentication OpenID Connect with SAP Cloud Logging](integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-clo-b2fffa4.md)
     -   [Configuration Parameters](configuration-parameters-1830bca.md)
     -   [Create an SAP Cloud Logging Instance through SAP BTP Cockpit](create-an-sap-cloud-logging-instance-through-sap-btp-cockpit-3aca7af.md)
     -   [Create an SAP Cloud Logging Instance through Cloud Foundry CLI](create-an-sap-cloud-logging-instance-through-cloud-foundry-cli-3658d09.md)
@@ -18,7 +21,14 @@ SAP Cloud Logging service is an instance-based and environment-agnostic observab
     -   [Ingest via JSON API Endpoint](ingest-via-json-api-endpoint-3416f8f.md)
     -   [Rotate the Ingestion Root CA Certificate](rotate-the-ingestion-root-ca-certificate-bbcb3e7.md)
 -   [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)
--   [Data Protection and Privacy](data-protection-and-privacy-80e76fd.md)
--   [Security Recommendations](security-recommendations-3382a69.md)
 -   [Backup and Restore Custom Contents](backup-and-restore-custom-contents-5b9bc66.md)
+-   [Security](security-25ed825.md)
+    -   [Security Recommendations](security-recommendations-3382a69.md)
+    -   [Data Protection and Privacy](data-protection-and-privacy-80e76fd.md)
+-   [Monitoring and Troubleshooting](monitoring-and-troubleshooting-51f61f2.md)
+    -   [Frequently Asked Questions](frequently-asked-questions-60cbbdc.md)
+        -   [Shipping Data](shipping-data-4182818.md)
+        -   [OpenSearch Dashboards UI](opensearch-dashboards-ui-56a5e04.md)
+        -   [Managing Your Instance](managing-your-instance-90943a1.md)
+-   [Accessibility Features](accessibility-features-1c628e5.md)
 

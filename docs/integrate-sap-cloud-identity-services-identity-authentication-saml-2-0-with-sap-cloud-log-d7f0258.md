@@ -1,14 +1,18 @@
+<!-- loiod7f02583830445de94b0f8c5c746cd51 -->
+
 # Integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 with SAP Cloud Logging
 
-> ## Caution:  
-> Ensure that you consider [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
+Enable secure, centralized user authentication and role management for logging instances with Identity Authentication SAML 2.0.
+
+> ### Caution:  
+> Make sure to consider [SAP BTP Security Recommendation BTP-CLS-0001](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0001&version=Cloud).
 
 This explains how to integrate with SAP Cloud Identity Services - Identity Authentication SAML 2.0. It results in changes in the Identity Authentication tenant and a corresponding SAML configuration to be used for creating or updating SAP Cloud Logging instances. Access to the Identity Authentication administration console as an administrator is a prerequisite.
 
-> ## Note:  
+> ### Note:  
 > We recommend you integrate with Identity Authentication. You can also integrate with other SAML providers, but there will be no support or documentation.
 
-> ## Note:  
+> ### Note:  
 > You can reuse the resulting SAML configuration for multiple instances of SAP Cloud Logging.
 
 
@@ -17,14 +21,14 @@ This explains how to integrate with SAP Cloud Identity Services - Identity Authe
 
 Obtain SAML 2.0 Identity Provider \(IdP\) Information based on the [Identity Authentication guide](https://help.sap.com/docs/identity-authentication/identity-authentication/tenant-saml-2-0-configuration). Use the console URL to access the tenant’s administration console for the Identity Authentication service. The URL has a `https://<tenantID>.accounts.ondemand.com/admin` pattern.
 
--   Note down the `idp.metadata_url` information as `https://<tenant ID>.accounts.ondemand.com/saml2/metadata` 
--   Note down the `idp.entity_id`. Open the metadata URL in your browser and copy the full value of the entityID field, which is located in the first line of the response.
+-   Note down the `idp.metadata_url` information as `https://<tenant ID>.accounts.ondemand.com/saml2/metadata`.
+-   Note down the `idp.entity_id`. Open the metadata URL in your browser and copy the full value of the `entityID` field, which is located in the first line of the response.
 
 
 
 ## Create a SAML 2.0 application
 
-Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authentication guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application). The `sp.entity_id` value  refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application.
+Create a SAML 2.0 application in your Identity Authentication account based on the [Identity Authentication guide](https://help.sap.com/docs/identity-authentication/identity-authentication/create-saml-2-0-application). The `sp.entity_id` value refers to the `Entity ID` header field in the SAML 2.0 Configuration tab of the SAML 2.0 application.
 
 
 
@@ -32,12 +36,15 @@ Create a SAML 2.0 application in your Identity Authentication account based on t
 
 Go to *Applications & Resources*, choose *Applications*, and select your application from the list. Then perform the following steps to configure the SAML 2.0 application within Identity Authentication:
 
-1.  [Configure a Self-Defined Attribute](https://help.sap.com/docs/identity-authentication/identity-authentication/user-attributes?version=Cloud) with *Name* "groups," *Source* "Identity Directory," and *Value* "All Groups."
+1.  [Configure a Self-Defined Attribute](https://help.sap.com/docs/identity-authentication/identity-authentication/user-attributes?version=Cloud) with *Name*: "groups," *Source*: "Identity Directory," and *Value*: "All Groups".
 2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) to *Email*.
 3.  Select *SAML 2.0 Configuration* and *Configure Manually*.
-    -   Set the name with value of the `sp.entity_id` from the Create a SAML 2.0 application step.
+    -   Set the name with the value of `sp.entity_id` from the Create a SAML 2.0 application step.
+
     -   Continue with one of the following options. **OPTION 1** is recommended, as it removes the need to specify the IdP SAML application's assertion/logout URL.
+
     -   **OPTION 1:** Enable request signing.
+
         -   Create a new signing certificate and private key in PKCS8 format.
 
             ```
@@ -48,15 +55,22 @@ Go to *Applications & Resources*, choose *Applications*, and select your applica
             # encode key to base64 format
             printf "%s" "$(< private_pkcs8.key)" | base64
             
+            
             ```
 
-        -   Enable request signing in Identity Authentication by setting *Require signed authentication requests* to *ON*, going to the *Signing Certificate* section, clicking *Add*, and uploading the certificate.
-        -   Make sure to provide a signing key to the `sp.signature_private_key` field and set the sp.signature\_private\_key\_password field if the signing key is encrypted. The signing certificate in your Identity Authentication SAML 2.0 application can expire, and Identity Authentication rejects login attempts with the error message, "The digital signature of the received SAML2 message is invalid."
+        -   Enable request signing in Identity Authentication by setting *Require signed authentication requests* to *ON*, going to the *Signing Certificate* section, choosing *Add*, and uploading the certificate.
 
-    -   **OPTION 2:** ⚠️ This step can only be done after an SAP Cloud Logging instance has been created and has to be repeated for each new service instance.
+        -   Make sure to provide a signing key to the `sp.signature_private_key` field and set the `sp.signature_private_key_password` field if the signing key is encrypted. The signing certificate in your Identity Authentication SAML 2.0 application can expire, and Identity Authentication rejects login attempts with the error message: ***The digital signature of the received SAML2 message is invalid.***
+
+
+    -   **OPTION 2:** 
+
+        > ### Caution:  
+        > This step can only be done after an SAP Cloud Logging instance has been created and has to be repeated for each new service instance.
+
         -   Set `Assertion Consumer Service Endpoint` to the OpenSearch Dashboards URL plus`/_opendistro/_security/saml/acs`.
-        -   Set `Single Logout Endpoint`: Set binding to HTTP\_REDIRECT and the URL must be the OpenSearch Dashboards URL without any path.
-        -   To store the configuration, click *Save* .
+        -   Set `Single Logout Endpoint`: Set binding to `HTTP_REDIRECT` and the URL must be the OpenSearch Dashboards URL without any path.
+        -   To store the configuration, choose **Save** .
 
 
 
@@ -66,10 +80,11 @@ Go to *Applications & Resources*, choose *Applications*, and select your applica
 
 -   [Create a group](https://help.sap.com/docs/identity-authentication/identity-authentication/create-new-user-group) that you intend to use for administrative access to SAP Cloud Logging instances and provide the name of this group as the input value for `admin_group` during the SAML configuration. This group gets administrative access in OpenSearch. It has permission to modify the security module.
 
-    > ## Note:  
-    > The login procedure forwards Identity Authentication group names to OpenSearch as backend roles. Backend roles can map to OpenSearch roles that grant permissions to the users assigned to the respective Identity Authentication groups. The configuration parameter `admin_group` is mapped automatically to the "all\_access" role
+    > ### Note:  
+    > The login procedure forwards Identity Authentication group names to OpenSearch as backend roles. Backend roles can map to OpenSearch roles that grant permissions to the users assigned to the respective Identity Authentication groups. The configuration parameter `admin_group` is mapped automatically to the "all\_access" role.
 
 -   [Add users to the group](https://help.sap.com/docs/identity-authentication/identity-authentication/add-users-to-group) who should have admin access. Users can be added or removed at any time.
+
 
 
 
@@ -111,6 +126,7 @@ Parameterization
      }
   }
 
+
 ```
 
 
@@ -140,14 +156,13 @@ Set `admin_group` from Create a Group and Assign Users step.
 <td valign="top">
 
 Set `sp.signature_private_key` and `sp.signature_private_key_password` if you selected OPTION 1 in the Configure SAML 2.0 application step.
-The sp.entity_id value refers to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application
 
 </td>
 </tr>
 <tr>
 <td valign="top">
 
-Set `sp.entity_id` value according to the "Entity ID" header field in the SAML 2.0 Configuration tab of the SAML 2.0 application
+Set `sp.entity_id` value according to the `Entity ID` header field in the SAML 2.0 Configuration tab of the SAML 2.0 application
 
 </td>
 </tr>

@@ -186,7 +186,7 @@ No
 </td>
 <td valign="top">
 
-[oidc](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_oidc)
+[oicd](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_nxs_3wl_53c)
 
 </td>
 <td valign="top">
@@ -208,7 +208,7 @@ No
 </td>
 <td valign="top">
 
-[saml](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_nrv_sjx_jzb)
+[saml](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_nrv_sjx_jzb) 
 
 </td>
 <td valign="top">
@@ -404,7 +404,6 @@ Boolean
 
 Enables ingestion over the `ingest-` and `ingest-mtls-` endpoint. This includes log and metric ingestion from Cloud Foundry. Defaults to `true`.
 
-
 </td>
 </tr>
 <tr>
@@ -425,10 +424,9 @@ Integer
 </td>
 <td valign="top">
 
-Specifies the maximum number of provisionable ingest instances, which are scaled automatically based on their overall CPU and memory utilization. Must be between `2` and `10`. Defaults to `10`. This parameter impacts peak throughput and buffering. Scale-out happens when the overall CPU utilization exceeds 80%. Scale-in happens when the overall CPU utilization or configuration parameter decreases. This parameter has no effect on the *dev* plan, which is limited to a single instance.
+Specifies the maximum number of provisionable ingest instances, which are scaled automatically based on their overall CPU and memory utilization. Must be between `2` and `10`. Defaults to `2`. This parameter impacts peak throughput and buffering. Scale-out happens when the overall CPU utilization exceeds 80%. Scale-in happens when the overall CPU utilization or configuration parameter decreases. This parameter has no effect on the *dev* plan, which is limited to a single instance.
 
 </td>
-</tr>
 </tr>
 <tr>
 <td valign="top">
@@ -448,7 +446,7 @@ Integer
 </td>
 <td valign="top">
 
-Specifies the minimum number ingest instances which are always provisioned regardless of auto-scaling. Utilized to guarantee a minimum number of running instances, support predictable workloads, and mitigate autoscaling lag during sudden ingestion bursts. Must be between `2` and `10` and less than or equals to `max_instances`. Default is `2`. This parameter has no effect on the *dev* plan, which is limited to a single instance. If `max_instances` is smaller than `min_instances`, both parameters will be set to the value of `max_instances` (= no autoscaling).
+Specifies the minimum number ingest instances which are always provisioned regardless of auto-scaling. Utilized to guarantee a minimum number of running instances, support predictable workloads, and mitigate autoscaling lag during sudden ingestion bursts. Must be between `2` and `10` and less than or equals to `max_instances`. Default is `2`. This parameter has no effect on the *dev* plan, which is limited to a single instance. If `max_instances` is smaller than `min_instances`, both parameters will be set to the value of `max_instances` \(= no autoscaling\).
 
 </td>
 </tr>
@@ -502,7 +500,7 @@ Boolean
 </td>
 <td valign="top">
 
-Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more information, refer to [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md).
+Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more information, see [Ingest via OpenTelemetry API Endpoint](ingest-via-opentelemetry-api-endpoint-fdc78af.md).
 
 </td>
 </tr>
@@ -510,11 +508,11 @@ Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more
 
 
 
-<a name="loio1830bca1b060484e9cfabc0e62472e8e__table_oidc"/>
+<a name="loio1830bca1b060484e9cfabc0e62472e8e__section_fs5_2wl_53c"/>
 
 ## Configuration Parameters for `oidc`
 
-Configuration options for OIDC Integration. For more information refer to [OIDC Integration](integrate-sap-cloud-identity-services-oidc.md).
+Configuration options for OIDC Integration. For more information, see [OIDC Integration](https://github.com/SAP-docs/btp-cloud-logging/blob/35438e2331e47fca765b49c4356f8944b731ed60/docs/integrate-sap-cloud-identity-services-oidc.md).
 
 
 <table>
@@ -580,7 +578,7 @@ String
 </td>
 <td valign="top">
 
-The OpenID group that you want to grant administrative access to. It will have permissions to modify the security module. Required if *enabled* is set to `true`.
+The OpenID group that you want to grant administrative access to. It will have permissions to modify the security module. Required if `enabled` is set to `true`.
 
 </td>
 </tr>
@@ -602,7 +600,7 @@ String
 </td>
 <td valign="top">
 
-The key in the JSON payload that stores the user's roles. The value of this key must be a comma-separated list of roles. For example: `groups` or `roles`. Required if *enabled* is set to `true`.
+The key in the JSON payload that stores the user's roles. The value of this key must be a comma-separated list of roles. For example: `groups` or `roles`. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: Configure OpenID Connect integration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
@@ -626,7 +624,7 @@ String
 </td>
 <td valign="top">
 
-The key in the JSON payload that stores the user's name. For example: `email` or `last_name`. Required if *enabled* is set to `true`.
+The key in the JSON payload that stores the user's name. For example: `email` or `last_name`. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: Configure OpenID Connect integration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
@@ -645,12 +643,12 @@ Required
 </td>
 <td valign="top">
 
-URL
+String
 
 </td>
 <td valign="top">
 
-The URL of your IdP where the security plugin can find the OpenID Connect metadata/configuration settings. Usually ends in `/.well-known/openid-configuration`. Required if *enabled* is set to `true`.
+The URL of your IdP where the security plugin can find the OpenID Connect metadata/configuration settings. Usually ends in `/.well-known/openid-configuration`. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: OpenID Connect URL](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
@@ -674,7 +672,7 @@ String
 </td>
 <td valign="top">
 
-The ID of the OpenID Connect client configured in your IdP. Required if *enabled* is set to `true`.
+The ID of the OpenID Connect client configured in your IdP. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
@@ -698,7 +696,7 @@ String
 </td>
 <td valign="top">
 
-The client secret of the OpenID Connect client configured in your IdP. Required if *enabled* is set to `true`.
+The client secret of the OpenID Connect client configured in your IdP. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
@@ -722,7 +720,7 @@ String
 </td>
 <td valign="top">
 
-The scope of the identity token issued by the IdP. Space-separated string list if more than one. For example: `"openid"`. Required if *enabled* is set to `true`.
+The scope of the identity token issued by the IdP. Space-separated string list if more than one. For example: `"openid"`. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: OpenID Connect Configuration](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 

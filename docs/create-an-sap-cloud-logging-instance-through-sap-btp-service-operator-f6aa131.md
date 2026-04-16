@@ -26,7 +26,7 @@
     kubectl create namespace sap-cloud-logging-integration
     ```
 
-2.  To create a service instance of SAP Cloud Logging, first create a `ServiceInstance` custom-resource yaml file. See [Service Plans](service-plans-a9d2d1b.md) and [Configuration Parameters](configuration-parameters-1830bca.md) for configuration options.
+2.  To create a service instance of SAP Cloud Logging, first create a `ServiceInstance` custom-resource `yaml` file. See [Service Plans](service-plans-a9d2d1b.md) and [Configuration Parameters](configuration-parameters-1830bca.md) for configuration options.
 
     ```
        apiVersion: services.cloud.sap.com/v1alpha1
@@ -75,7 +75,7 @@
 
 
 > ### Note:  
-> To update service parameters, change the values in your yaml file and deploy the changes with `kubectl apply`.
+> To update service parameters, change the values in your `yaml` file and deploy the changes with `kubectl apply`.
 
 > ### Note:  
 > If you have questions about these steps, see [SAP BTP Service operator service instance creation documentation](https://github.com/SAP/sap-btp-service-operator/blob/main/README.md#step-1-create-a-service-instance).
@@ -86,7 +86,7 @@
 
 ## Create a Service Binding
 
-This step results in a `secret` with the name `cls``sap-cloud-logging-integration` namespace of the Kyma cluster, which provides credentials to see and ingest data.
+This step results in a `secret` with the name `cls` `sap-cloud-logging-integration` namespace of the Kyma cluster, which provides credentials to see and ingest data.
 
 1.  Create a `ServiceBinding` and `secret` with the BTP Operator in the `sap-cloud-logging-integration` namespace by executing the following command: in the
 
@@ -108,7 +108,7 @@ This step results in a `secret` with the name `cls``sap-cloud-logging-integratio
 
     We recommend you enable [credentials rotation](https://github.com/SAP/sap-btp-service-operator/blob/main/README.md#credentials-rotation) for the ServiceBinding, so that the configuration is updated automatically. Assure that the *rotationFrequency* binding parameter reflects a period of more than a day to avoid frequent restarts.
 
-    The binding creation automatically triggers the creation of a `secret` with the name `sap-cloud-logging` in in the same namespace.
+    The binding creation automatically triggers the creation of a `secret` with the name `sap-cloud-logging` in the same namespace.
 
 
 

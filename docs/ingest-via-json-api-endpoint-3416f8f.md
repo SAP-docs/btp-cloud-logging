@@ -90,7 +90,7 @@ PUT /
 
 ```
 
-Setting the `Content-Encoding` header allows HTTP clients to transfer payload more efficiently by applying compression. Currently, it supports gzip and deflate. You can test gzip using the following command:
+Setting the `Content-Encoding` header allows HTTP clients to transfer payload more efficiently by applying compression. Currently, it supports `gzip` and `deflate`. You can test `gzip` using the following command:
 
 ```
 echo 'json={"msg":"foobar"}' | gzip > json.gz
@@ -112,7 +112,7 @@ You can read the `ingest-mtls-endpoint`, as well as the credentials \(`ingest-mt
 > TLS certificates for client authentication are issued with a validity period of 90 days by default. Don't forget to rotate the service key and update the credentials in all sender configurations. Otherwise, ingestion will stop!
 
 > ### Note:  
-> The validity period can be configured via service binding parameter within the range of 1 to 180 days by utilizing the certValidityDays. For example, passing `{"ingest":{"certValidityDays":30}}` as a configuration parameter for binding creation sets the validity to 30 days.
+> The validity period can be configured via service binding parameter within the range of 1 to 180 days by utilizing the `certValidityDays`. For example, passing `{"ingest":{"certValidityDays":30}}` as a configuration parameter for binding creation sets the validity to 30 days.
 
 > ### Note:  
 > Deleting a binding does not revoke the corresponding certificate. [Rotate the Ingestion Root CA Certificate](rotate-the-ingestion-root-ca-certificate-bbcb3e7.md) if the root CA of your service instance is expiring soon, or the private key of a certificate was leaked.

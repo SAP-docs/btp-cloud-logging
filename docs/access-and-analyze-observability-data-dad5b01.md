@@ -10,7 +10,7 @@ Access and analyze observability data that has been ingested following the [Inge
 
 ## Procedure
 
-To open the dashboard UI::
+To open the dashboard UI:
 
 -   Create a service binding or service key, and read the contents to extract the dashboard login information. See [Initial Setup](initial-setup-ac50297.md).
 -   Open the dashboards URLin a browser and sign in using the configured login method.
