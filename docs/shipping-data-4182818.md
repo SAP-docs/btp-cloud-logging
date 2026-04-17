@@ -40,7 +40,7 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following Cloud Foundry-specific points:
 
--   Check for rejected documents in the "Ingestion Overview" dashboard.
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
 -   Check that the [JSON ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest). It is enabled by default but can be disabled via configuration.
 -   Verify that your application is properly configured to send signals to Cloud Logging:
     -   Run `cf env <APP_NAME>` and check that `VCAP_SERVICES` contains a syslog drain URL pointing to your Cloud Logging instance's ingest endpoint. If the URL or credentials are missing or incorrect, unbind and rebind your application. A restart is not required. Signals that were not shipped before the rebind cannot be retrieved.
@@ -72,7 +72,7 @@ To avoid this:
 
 -   Provision the Cloud Logging instance in a region close to the Cloud Foundry landscape hosting the apps.
 -   Reduce the signal volume per application instance.
--   Verify that the `syslog_drain_url` in the Cloud Logging entry of your Cloud Foundry environment variables uses the `https-batch` protocol. Older service bindings may not — rebind if needed. For user-provided services, see [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime).
+-   Verify that the `syslog_drain_url` in the Cloud Logging entry of your Cloud Foundry environment variables uses the `https-batch` protocol. Older service bindings may not - rebind if needed. For user-provided services, see [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime).
 
 
 
@@ -98,7 +98,7 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following Kyma-specific points:
 
--   Check for rejected documents in the "Ingestion Overview" dashboard.
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
 
     > ### Note:  
     > It only covers issues for `logs-json-kyma-*` and `logs-json-istio-envoy-kyma-*` indexes.
@@ -117,10 +117,10 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 Additionally, check the following OpenTelemetry-specific points:
 
 -   Check that [OpenTelemetry is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest_otlp) for your service instance.
--   Check that an exporter using the OTLP/gRPC protocol is configured in your OTel instrumentation — OTLP/HTTP is not supported. Make sure it points to the `ingest-otlp-endpoint` from your service binding, not the `ingest-endpoint` or `ingest-mtls-endpoint`.
+-   Check that an exporter using the OTLP/gRPC protocol is configured in your OTel instrumentation - OTLP/HTTP is not supported. Make sure it points to the `ingest-otlp-endpoint` from your service binding, not the `ingest-endpoint` or `ingest-mtls-endpoint`.
 -   Check that the client certificates from your service binding are correctly passed to your exporter.
 -   Keep your OpenTelemetry SDK and Collector versions up to date and check for incompatibilities between them.
--   Check that [retries are configured](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_bjc_q3t_t3c) on your sender — without retries, transient errors will cause data loss.
+-   Check that [retries are configured](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_bjc_q3t_t3c) on your sender - without retries, transient errors will cause data loss.
 
 
 
@@ -132,8 +132,8 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following JSON API-specific points:
 
--   Check for rejected documents in the "Ingestion Overview" dashboard.
--   Check that the [ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest) for your service instance — it is enabled by default but can be disabled via configuration.
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
+-   Check that the [ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest) for your service instance - it is enabled by default but can be disabled via configuration.
 -   Check that your sender is using the `ingest-endpoint` or `ingest-mtls-endpoint` from your service binding.
 
 
@@ -142,12 +142,12 @@ Additionally, check the following JSON API-specific points:
 
 ## Is the Cloud Logging instance overloaded?
 
-Overload occurs when the ingestion rate exceeds what the instance can handle. Cloud Logging responds with back pressure — returning retryable error codes to signal senders to slow down.
+Overload occurs when the ingestion rate exceeds what the instance can handle. Cloud Logging responds with back pressure - returning retryable error codes to signal senders to slow down.
 
 **How to recognize it:**
 
 -   On the sender side: error response codes and failed request entries in your shipper logs.
--   In Cloud Logging: check the "Usage Metrics" dashboard in OpenSearch Dashboards — if ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
+-   In Cloud Logging: check the *Usage Metrics* dashboard \(under **OpenSearch → DashboardsDashboards**\). If ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
 
 **What to do:**
 
@@ -170,7 +170,7 @@ Cloud Logging rejects requests with a body size exceeding 4 MiB. A size-based re
 
 Cloud Logging uses the OpenSearch default of 1,000 fields per index \(`index.mapping.total_fields.limit`\). When this limit is exceeded, documents containing new fields are rejected.
 
-In practice, the usable limit is closer to 500 for most data, because the default mappings create a `.keyword` sub-field for every string field — effectively using two field slots per ingested string field. See [What are .keyword fields in OpenSearch?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_o14_ddy_t3c).
+In practice, the usable limit is closer to 500 for most data, because the default mappings create a `.keyword` sub-field for every string field - effectively using two field slots per ingested string field. See [What are .keyword fields in OpenSearch?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_o14_ddy_t3c).
 
 To check the current field count for an index pattern, go to **Dashboards Management → Index Patterns**, select your index pattern, and check the number of listed fields. Alternatively, use Dev Tools to inspect the full mapping:
 

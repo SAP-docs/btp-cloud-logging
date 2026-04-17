@@ -26,9 +26,7 @@ If you encounter an issue with this service, we recommend following the procedur
 
     For more information about platform availability, updates and notifications, see [Platform Updates and Notifications](https://help.sap.com/docs/btp/sap-business-technology-platform/platform-updates-and-notifications).
 
-2.  Check the troubleshooting scenarios.
-
-    See [Frequently Asked Questions](frequently-asked-questions-60cbbdc.md).
+2.  Check the [Frequently Asked Questions](frequently-asked-questions-60cbbdc.md).
 
 3.  Check other resources, and if you don’t find a solution, contact SAP Support. Support component for this service: `BC-CP-CLS`.
 
