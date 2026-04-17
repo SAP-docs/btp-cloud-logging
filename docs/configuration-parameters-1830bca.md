@@ -648,7 +648,7 @@ String
 </td>
 <td valign="top">
 
-The URL of your IdP where the security plugin can find the OpenID Connect metadata/configuration settings. Usually ends in `/.well-known/openid-configuration`. Required if `enabled` is set to `true`.
+The URL of your IdP where the security plugin can find the OpenID Connect metadata/configuration settings. The URL must end with `/.well-known/openid-configuration`. Required if `enabled` is set to `true`.
 
 [OpenSearch docs: OpenID Connect URL](https://opensearch.org/docs/latest/security/authentication-backends/openid-connect/)
 
