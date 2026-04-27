@@ -40,7 +40,7 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following Cloud Foundry-specific points:
 
--   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch Dashboards → Dashboards**\).
 -   Check that the [JSON ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest). It is enabled by default but can be disabled via configuration.
 -   Verify that your application is properly configured to send signals to Cloud Logging:
     -   Run `cf env <APP_NAME>` and check that `VCAP_SERVICES` contains a syslog drain URL pointing to your Cloud Logging instance's ingest endpoint. If the URL or credentials are missing or incorrect, unbind and rebind your application. A restart is not required. Signals that were not shipped before the rebind cannot be retrieved.
@@ -98,7 +98,7 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following Kyma-specific points:
 
--   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch Dashboards → Dashboards**\).
 
     > ### Note:  
     > It only covers issues for `logs-json-kyma-*` and `logs-json-istio-envoy-kyma-*` indexes.
@@ -132,7 +132,7 @@ Start with the [general troubleshooting steps](shipping-data-4182818.md#loio4182
 
 Additionally, check the following JSON API-specific points:
 
--   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch → DashboardsDashboards**\).
+-   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch Dashboards → Dashboards**\).
 -   Check that the [ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest) for your service instance - it is enabled by default but can be disabled via configuration.
 -   Check that your sender is using the `ingest-endpoint` or `ingest-mtls-endpoint` from your service binding.
 
@@ -147,7 +147,7 @@ Overload occurs when the ingestion rate exceeds what the instance can handle. Cl
 **How to recognize it:**
 
 -   On the sender side: error response codes and failed request entries in your shipper logs.
--   In Cloud Logging: check the *Usage Metrics* dashboard \(under **OpenSearch → DashboardsDashboards**\). If ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
+-   In Cloud Logging: check the *Usage Metrics* dashboard \(under **OpenSearch Dashboards → Dashboards**\). If ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
 
 **What to do:**
 

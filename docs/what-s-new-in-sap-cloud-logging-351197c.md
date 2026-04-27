@@ -89,6 +89,268 @@ Cloud Logging
 </td>
 <td valign="top">
 
+OIDC URL Validation During Instance Creation
+
+</td>
+<td valign="top">
+
+During instance creation with OIDC, the service evaluates OIDC openid\_connect\_url configuration and rejects it if the URL is incorrect. See [OIDC documentation](https://help.sap.com/docs/cloud-logging/cloud-logging/integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-cloud-logging?version=Cloud).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-04-27
+
+</td>
+<td valign="top">
+
+2026-04-30
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+Debugging Guide for Ingestion Errors
+
+</td>
+<td valign="top">
+
+A guide for debugging ingestion errors is available within the *Ingestion Overview* dashboard \(under *OpenSearch Dashboards* \> *Dashboards*\).​
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-04-27
+
+</td>
+<td valign="top">
+
+2026-04-30
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+Start Time Column for Istio Logs
+
+</td>
+<td valign="top">
+
+The Kyma *Request & Logs* dashboard was extended by a *start\_time* column for the Istio request logs. The search table is now also sorted by this column in descending order \(newest entries first\).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-04-27
+
+</td>
+<td valign="top">
+
+2026-04-30
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+GenAI Dashboard preview
+
+</td>
+<td valign="top">
+
+The new Generative AI / Agent Dashboard is now available in Preview. Built on OpenTelemetry \(gen\_ai\) conventions, this dashboard allows you to seamlessly test and monitor your GenAI applications using Cloud Logging. Find the dashboard as *\[gen\_ai\] Dashboard* under list of dashboards.
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+Beta
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-04-27
+
+</td>
+<td valign="top">
+
+2026-04-30
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 OIDC support
 
 </td>
