@@ -41,3 +41,25 @@ To **export**: search or filter for the dashboards you want, select them, and ch
 
 To **import**: choose **Import**, select your NDJSON file, and choose how to handle any conflicts with existing objects.
 
+
+
+<a name="loio56a5e041a18341a5b35d85b360f7d591__section_wp1_htg_cjc"/>
+
+## Why are read-only users missing navigation menu items in OpenSearch Dashboards?
+
+If read-only users can only see the *Discover* and *Dashboards* panels while all other menu items \(for example, Observability, Plugins and Management\) are missing, the `kibana_read_only` backend role is most likely the cause.
+
+The `kibana_read_only` role is a built-in OpenSearch role that hides most of the sidebar navigation. It was designed to limit the UI to only *Discover* and *Dashboards*, but in practice, it is too restrictive for most use cases. It effectively overrides other roles, so even if `readall` or `observability_read_access` are assigned, the navigation remains hidden as long as `kibana_read_only` is part of the role mapping.
+
+To resolve this, remove `kibana_read_only` from the backend role mapping of the affected user or group:
+
+1.  Log in to OpenSearch Dashboards as a user who has permissions to make security changes \(for example, the admin user\).
+2.  Navigate to *Security* \> *Roles*.
+3.  Select the `kibana_read_only` role.
+4.  Navigate to the *Mapped users* tab.
+5.  Remove the affected user or group from the mapping.
+
+After removing the role, the missing navigation sidebar elements will be visible again on the next login. Read-only restrictions from other assigned roles will still remain intact.
+
+The `kibana_read_only` role is not required for read-only access. You can refer to this [blog post](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-cloud-logging-service-configuration-of-a-read-only-user/ba-p/13603941) to see an example of how to configure a read-only user.
+

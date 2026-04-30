@@ -94,7 +94,7 @@ OIDC URL Validation During Instance Creation
 </td>
 <td valign="top">
 
-During instance creation with OIDC, the service evaluates OIDC openid\_connect\_url configuration and rejects it if the URL is incorrect. See [OIDC documentation](https://help.sap.com/docs/cloud-logging/cloud-logging/integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-cloud-logging?version=Cloud).
+During instance creation with OIDC, the service evaluates the OIDC openid\_connect\_url configuration and rejects it if the URL is incorrect. See [OIDC documentation](https://help.sap.com/docs/cloud-logging/cloud-logging/integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-cloud-logging?version=Cloud).
 
 </td>
 <td valign="top">
@@ -129,7 +129,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-04-27
+2026-04-30
 
 </td>
 <td valign="top">
@@ -195,7 +195,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-04-27
+2026-04-30
 
 </td>
 <td valign="top">
@@ -259,7 +259,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-04-27
+2026-04-30
 
 </td>
 <td valign="top">
@@ -290,7 +290,7 @@ GenAI Dashboard preview
 </td>
 <td valign="top">
 
-The new Generative AI / Agent Dashboard is now available in Preview. Built on OpenTelemetry \(gen\_ai\) conventions, this dashboard allows you to seamlessly test and monitor your GenAI applications using Cloud Logging. Find the dashboard as *\[gen\_ai\] Dashboard* under list of dashboards.
+The new Generative AI / Agent Dashboard is now available in Preview. Built on OpenTelemetry \(gen\_ai\) conventions, this dashboard allows you to seamlessly test and monitor your GenAI applications using Cloud Logging. Find the dashboard as *\[gen\_ai\] Dashboard* under the list of dashboards.
 
 </td>
 <td valign="top">
@@ -325,7 +325,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-04-27
+2026-04-30
 
 </td>
 <td valign="top">

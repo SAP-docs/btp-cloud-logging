@@ -21,6 +21,7 @@ Frequently Asked Questions provide quick access to answers for common user queri
     -   [Which tenant to use in OpenSearch Dashboards?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_mk2_ddy_t3c)
     -   [What are .keyword fields in OpenSearch?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_o14_ddy_t3c)
     -   [How to import and export dashboards?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_n21_2dy_t3c)
+    -   [Why are read-only users missing navigation menu items in OpenSearch Dashboards?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_wp1_htg_cjc)
 
 -   [Managing Your Instance](managing-your-instance-90943a1.md)
     -   [How to share a Cloud Logging instance?](managing-your-instance-90943a1.md#loio90943a11646a4de0bc9adf8b02167968__section_dwz_why_t3c)
