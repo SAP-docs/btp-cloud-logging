@@ -298,6 +298,28 @@ Indirectly, this parameter sets the maximum disk size for storing observability 
 
 </td>
 </tr>
+<tr>
+<td valign="top">
+
+min\_data\_nodes
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+Integer
+
+</td>
+<td valign="top">
+
+Specifies the minimum number of OpenSearch data nodes which are always provisioned regardless of auto-scaling. This parameter allows you to maintain a minimum baseline of data nodes to help mitigate potential ingestion bottlenecks and prescale for anticipated workloads. Needs to be between `2` and `10` and less than or equals to `max_data_nodes`. Default is `2`. This parameter has no effect for the *dev* plan.
+
+</td>
+</tr>
 </table>
 
 
@@ -979,7 +1001,8 @@ The following snippet shows a sample payload that could be used for a `standard`
 > ```
 > {
 >   "backend": {
->     "max_data_nodes": 10
+>     "max_data_nodes": 10,
+>     "min_data_nodes": 3
 >   },
 >   "dashboards": {
 >     "custom_label": "My-Label"
