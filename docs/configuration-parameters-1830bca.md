@@ -316,7 +316,7 @@ Integer
 </td>
 <td valign="top">
 
-Specifies the minimum number of OpenSearch data nodes which are always provisioned regardless of auto-scaling. This parameter allows you to maintain a minimum baseline of data nodes to help mitigate potential ingestion bottlenecks and prescale for anticipated workloads. Needs to be between `2` and `10` and less than or equals to `max_data_nodes`. Default is `2`. This parameter has no effect for the *dev* plan.
+Specifies the minimum number of OpenSearch data nodes to remain provisioned, regardless of auto-scaling. This allows for prescaling the minimum disk size for storing observability date as described in [Service Plans](service-plans-a9d2d1b.md). Maintaining a minimum baseline of data nodes can help mitigate potential ingestion bottlenecks. This parameter has no effect for the *dev* plan. Needs to be between `2` and `10` and less than or equals to `max_data_nodes`. Default is `2`.
 
 </td>
 </tr>
