@@ -41,15 +41,18 @@ Create an OpenID Connect application in your Identity Authentication account bas
 Go to *Applications & Resources*, choose *Applications*, and select your application from the list. Then perform the following steps to configure the OpenID Connect application within Identity Authentication:
 
 1.  [Configure a Self-Defined Attribute](https://help.sap.com/docs/identity-authentication/identity-authentication/user-attributes?version=Cloud) with *Name*: "groups," *Source*: "Identity Directory," and *Value*: "All Groups".
-2.  [Configure Subject Name Identifier](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) sent to the application.
-    - Select the value `Identity Directory` in the `Source` field under *Primary Attribute* section
-    - Select the `Email` option in the `Value` dropdown field in the *Primary Attribute* section
-4.  Select *OpenID Connect Configuration* and *Configure Manually*.
-    -   This step can only be done after an SAP Cloud Logging instance has been created and has to be repeated for each new service instance.
-        -   Set `Redirect URI` to the OpenSearch Dashboards URL plus`/auth/openid/login`.
-        -   Set `Post Logout Redirect`: Set the value to your OpenSearch Dashboards URL without any trailing path.
-        -   To store the configuration, choose *Save* .
+2.  [Configure Default Name ID Format](https://help.sap.com/docs/identity-authentication/identity-authentication/configure-subject-name-identifier-sent-to-application?version=Cloud) sent to the application.
+    -   Select the value *Identity Directory* in the *Source* field under *Primary Attribute* section.
+    -   Select the *Email* option in the *Value* dropdown field in the *Primary Attribute* section.
 
+3.  Select *OpenID Connect Configuration* and *Configure Manually*.
+
+    > ### Note:  
+    > This step can only be done after an SAP Cloud Logging instance has been created and has to be repeated for each new service instance.
+
+    -   Set `Redirect URI` to the OpenSearch Dashboards URL plus`/auth/openid/login`.
+    -   Set `Post Logout Redirect:` Set the value to your OpenSearch Dashboards URL without any trailing path.
+    -   To store the configuration, choose *Save* .
 
 
 

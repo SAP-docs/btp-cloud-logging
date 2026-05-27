@@ -89,6 +89,72 @@ Cloud Logging
 </td>
 <td valign="top">
 
+OpenSearch and OpenSearch Dashboards update to version 2.19.5
+
+</td>
+<td valign="top">
+
+The SAP Cloud Logging service has now updated the OpenSearch and OpenSearch Dashboards to version 2.19.5.
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-05-28
+
+</td>
+<td valign="top">
+
+2026-05-28
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 OIDC URL Validation During Instance Creation
 
 </td>
