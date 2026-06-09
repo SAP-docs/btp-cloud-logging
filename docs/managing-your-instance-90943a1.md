@@ -8,65 +8,25 @@
 
 ## How to share a Cloud Logging instance?
 
-SAP BTP does not natively support service instance sharing across subaccounts. However, you can share access to a Cloud Logging instance by creating a service key and providing its endpoints and credentials to any sender that needs to ship data to it.
+SAP BTP does not natively support service instance sharing across subaccounts, but there are several ways to share access to a Cloud Logging instance across spaces, subaccounts, or environments.
 
-Below you can find examples for Cloud Foundry and Kyma.
+**Cloud Foundry**
 
-For Cloud Foundry \(CF\) applications there are two main approaches:
+The following approaches are available:
 
--   **Native Cloud Foundry sharing**: works across spaces within the same Cloud Foundry org, or across orgs on the same Cloud Foundry API endpoint. Credentials are managed automatically by the platform.
-
-    ```
-    cf share-service <SERVICE_INSTANCE> -s <OTHER_SPACE> [-o OTHER-ORG]
-    ```
-
-    Then bind your Cloud Foundry application from `<OTHER_SPACE>` as usual. See the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/services/sharing-instances.html) for limitations and security considerations.
-
--   **User-Provided Service \(UPS\)**: works across any location \(different subaccounts, regions, or environments\). Requires manual credential management and rotation.
-
-    -   For Cloud Foundry log / resource metric ingestion, extract the syslog drain URL from the service key in the **source** subaccount:
-
-        ```
-        SYSLOG_DRAIN_URL="$(
-        cf service-key <cloud-logging-instance-name> <service-key-name> | \
-            tail -n +2 | \
-            jq -r '
-            .credentials |
-            "https-batch://\(.["ingest-username"]):\(.["ingest-password"])@\(.["ingest-endpoint"])/cfsyslog?drain-data=all"
-            '
-        )"
-        ```
-
-        Then, after switching to the **target** subaccount, create a user-provided service:
-
-        ```
-        cf create-user-provided-service <ups-name> -l "$SYSLOG_DRAIN_URL" -t "Cloud Logging"
-        ```
-
-        The `?drain-data=all` parameter ensures resource metrics are included. Bind your Cloud Foundry application to the user-provided service `<ups-name>`.
-
-    -   For applications using their own shipper \(not the Cloud Foundry syslog integration\), extract the service key credentials in the **source** subaccount:
-
-        ```
-        cf service-key <cloud-logging-instance-name> <service-key-name> | \
-          tail -n +2 | \
-          jq -r '.credentials' \
-          > ups.json
-        ```
-
-        Then, after switching to the **target** subaccount, create a user-provided service from it:
-
-        ```
-        cf create-user-provided-service <ups-name> -p ups.json -t "Cloud Logging"
-        ```
-
-        Bind your CF application to the user-provided service `<ups-name>`.
-
-
+-   **Native Cloud Foundry sharing** \(`cf share-service`\): across spaces within the same org, or across orgs on the same Cloud Foundry API endpoint. Credentials are managed automatically. See [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime) for detailed steps.
+-   **User-Provided Service \(UPS\)** for Cloud Foundry logs/metrics: works across subaccounts, regions, or environments. Requires manual credential management and rotation. See [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime) for detailed steps.
+-   **User-Provided Service \(UPS\)** for custom shippers: create a UPS holding the service key credentials and bind your application to it. See [Ingest via OpenTelemetry API Endpoint](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-opentelemetry-api-endpoint) \(section "Using user-provided Services"\) for detailed steps.
 
 For detailed guidance, sample scripts, and best practices on credential rotation, see the [Instance Sharing blog post](https://community.sap.com/t5/technology-blog-posts-by-sap/instance-sharing-sap-cloud-logging/ba-p/14179941).
 
-For Kyma applications you can create a secret in the **target** namespace \(similar like described in the prerequisites section of the [Integrate with Cloud Logging](https://kyma-project.io/external-content/telemetry-manager/docs/user/integration/sap-cloud-logging/README.html#prerequisites) guide\). This secret can be populated with the endpoints and credentials of the respective Cloud Logging that you want to target.
+**Kyma**
+
+Create a secret in the **target** namespace populated with the endpoints and credentials of the service key. See the prerequisites section of [Integrate with Cloud Logging](https://kyma-project.io/external-content/telemetry-manager/docs/user/integration/sap-cloud-logging/README.html#prerequisites) for details.
+
+**BTP instance sharing** \(via BTP CLI or SAP BTP Cockpit\)
+
+Limited to environments within the same subaccount. Works across Cloud Foundry, Kyma, and other environments, with credentials managed automatically. See the [BTP CLI reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-share-services-instance).
 
 
 
