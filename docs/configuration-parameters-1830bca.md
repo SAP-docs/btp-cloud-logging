@@ -294,7 +294,29 @@ Integer
 </td>
 <td valign="top">
 
-Indirectly, this parameter sets the maximum disk size for storing observability data as described in [Service Plans](service-plans-a9d2d1b.md). This parameter has no effect for the *dev* plan. Needs to be between `2` and `10`. Default is `10`.
+Indirectly, this parameter sets the maximum disk size for storing observability data as described in [Service Plans](service-plans-a9d2d1b.md). This parameter has no effect for the *dev* plan. Needs to be between `2` and `10`. The default is `10`.
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+min\_data\_nodes
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+Integer
+
+</td>
+<td valign="top">
+
+Specifies the minimum number of OpenSearch data nodes to remain provisioned, regardless of auto-scaling. This allows for prescaling the minimum disk size for storing observability data as described in [Service Plans](service-plans-a9d2d1b.md). Maintaining a minimum baseline of data nodes can help mitigate potential ingestion bottlenecks. This parameter has no effect for the `dev` plan. Needs to be between `2` and `10`, and less than or equals to `max_data_nodes`. The default is `2`.
 
 </td>
 </tr>

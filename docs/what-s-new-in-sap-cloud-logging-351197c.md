@@ -89,6 +89,72 @@ Cloud Logging
 </td>
 <td valign="top">
 
+`backend.min_data_nodes` service configuration parameter
+
+</td>
+<td valign="top">
+
+The `backend.min_data_nodes` service configuration parameter allows you to maintain a minimum baseline of data nodes to help mitigate potential ingestion bottlenecks and prescale for anticipated workloads. See [Configuration Parameters for backend](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-backend).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-06-11
+
+</td>
+<td valign="top">
+
+2026-06-11
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 OpenSearch and OpenSearch Dashboards update to version 2.19.5
 
 </td>
