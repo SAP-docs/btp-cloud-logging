@@ -534,7 +534,7 @@ Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more
 
 ## Configuration Parameters for `oidc`
 
-Configuration options for OIDC Integration. For more information, see [OIDC Integration](https://github.com/SAP-docs/btp-cloud-logging/blob/35438e2331e47fca765b49c4356f8944b731ed60/docs/integrate-sap-cloud-identity-services-oidc.md).
+Configuration options for OIDC Integration. For more information, see [OIDC Integration](integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-clo-b2fffa4.md).
 
 
 <table>
