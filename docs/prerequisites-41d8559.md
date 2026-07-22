@@ -2,9 +2,7 @@
 
 # Prerequisites
 
-To create instances of SAP Cloud Logging, you must configure entitlements for SAP Cloud Logging, and integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 with SAP Cloud Logging.
-
-
+To create instances of SAP Cloud Logging, you must configure entitlements for SAP Cloud Logging, and integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 (or) OIDC with SAP Cloud Logging.
 
 <a name="loio41d8559375b84adda2596d943404d93a__section_u5p_fjy_kzb"/>
 
@@ -28,4 +26,3 @@ We recommend using SAP Cloud Identity Services - Identity Authentication as your
 
 -   [Integrate SAP Cloud Identity Services - Identity Authentication SAML 2.0 with SAP Cloud Logging](integrate-sap-cloud-identity-services-identity-authentication-saml-2-0-with-sap-cloud-log-d7f0258.md) — Configure SAML 2.0 authentication to establish a corresponding SAML configuration for your SAP Cloud Logging instances.
 -   [Integrate SAP Cloud Identity Services - Identity Authentication OpenID Connect with SAP Cloud Logging](integrate-sap-cloud-identity-services-identity-authentication-openid-connect-with-sap-clo-b2fffa4.md) — Configure OpenID Connect authentication to establish a corresponding OIDC configuration for your SAP Cloud Logging instances.
-
