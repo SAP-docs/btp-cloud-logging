@@ -29,6 +29,20 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
 
     After OpenTelemetry has been enabled, the endpoint is added to the service instance.
 
+    > ### Note:  
+    > By default, the trace pipeline assembles complete traces and populates the service map \(`otel-v1-apm-service-map` index\). If you only need raw span data and do not require service map or full trace assembly, you can enable span passthrough mode:
+    > 
+    > ```
+    > {
+    >     "ingest_otlp": {
+    >         "enabled": true,
+    >         "span_passthrough": true
+    >     }
+    > }
+    > ```
+    > 
+    > When `span_passthrough` is set to `true`, spans are written to OpenSearch individually as they arrive. The service map is not populated and trace views may show incomplete traces.
+
 2.  Retrieve Endpoint and Certificates.
 
     Once OpenTelemetry ingestion is enabled, all new service bindings and service keys contain the required endpoint and credentials for mutual TLS. SAP Cloud Logging only supports mTLS for the OTLP endpoint. The service key contains the following OTLP-related properties:
