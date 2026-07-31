@@ -33,6 +33,8 @@ Obtain OpenID Connect Identity Provider \(IdP\) Information based on the [Identi
 ## Create an OpenID Connect application
 
 Create an OpenID Connect application in your Identity Authentication account based on the [Identity Authentication guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/create-openid-connect-application). Create OpenID client secrets based on the [Configuration Guide](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/auth-configure-secrets-for-api-authentication)
+    > ### Note:  
+    > Make sure to provide API Access scope "OpenID" to the OpenID client secret created on the Identity Authentication application.
 
 
 
