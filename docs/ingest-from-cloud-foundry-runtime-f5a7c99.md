@@ -18,7 +18,7 @@ All configuration steps can be done either using SAP BTP cockpit or the Cloud Fo
 
 <a name="loiof5a7c993743c4ee79722479371b90b37__section_fbf_yc4_xyb"/>
 
-## Procedures
+## Procedure
 
 > ### Note:  
 > For shipping logs/metrics via Cloud Foundry, the service instance must have the [`ingest.enabled`](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_brp_bjx_jzb) configuration parameter set to `true` \(by default\).

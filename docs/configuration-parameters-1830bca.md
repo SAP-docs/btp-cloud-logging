@@ -526,6 +526,33 @@ Enables ingestion over the OpenTelemetry Protocol. Defaults to `false`. For more
 
 </td>
 </tr>
+<tr>
+<td valign="top">
+
+span\_passthrough
+
+</td>
+<td valign="top">
+
+No
+
+</td>
+<td valign="top">
+
+Boolean
+
+</td>
+<td valign="top">
+
+When set to true, spans are written to OpenSearch individually as they arrive, without assembling complete traces.
+
+> ### Note:  
+> When span\_passthrough is enabled, the service map \(otel-v1-apm-service-map index\) is not populated and trace views in OpenSearch Dashboards may show incomplete traces. Use this only when you need raw span data and do not require service map or full trace assembly.
+
+
+
+</td>
+</tr>
 </table>
 
 
@@ -1011,6 +1038,10 @@ The following snippet shows a sample payload that could be used for a `standard`
 >     "enabled": true,
 >     "max_instances": 10,
 >     "min_instances": 3
+>   },
+>   "ingest_otlp": {
+>     "enabled": true,
+>     "span_passthrough": false
 >   },
 >   "retention_period": 14
 > }

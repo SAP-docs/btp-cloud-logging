@@ -89,6 +89,72 @@ Cloud Logging
 </td>
 <td valign="top">
 
+Improved OTel Attribute Mapping for Exceptions
+
+</td>
+<td valign="top">
+
+The OTel index mapping template has been extended with specific attribute mappings for exception fields \(for example, `exception.stacktrace` mapped as `match_only_text` \) to ensure correct handling of large multi-line content. HTTP and K8s attribute mappings are also covered, with K8s labels/annotations handling tracked separately.
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-07-23
+
+</td>
+<td valign="top">
+
+2026-07-23
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 `backend.min_data_nodes` service configuration parameter
 
 </td>
