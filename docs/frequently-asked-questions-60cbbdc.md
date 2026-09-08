@@ -2,7 +2,10 @@
 
 # Frequently Asked Questions
 
-Frequently Asked Questions provide quick access to answers for common user queries related to SAP Cloud Logging.
+Frequently Asked Questions \(FAQ\) provide quick access to answers for common user queries related to SAP Cloud Logging.
+
+> ### Restriction:  
+> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
 
 -   [Shipping Data](shipping-data-4182818.md)
     -   [Why is data not showing up in Cloud Logging?](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_bhg_qkt_t3c)

@@ -2,6 +2,9 @@
 
 # Managing Your Instance
 
+> ### Restriction:  
+> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
+
 
 
 <a name="loio90943a11646a4de0bc9adf8b02167968__section_dwz_why_t3c"/>

@@ -40,7 +40,7 @@ See [Prerequisites](prerequisites-41d8559.md).
 
 
 3.  Wait for your dedicated instance to be provisioned.
-    -   Use the following command to verify the service provisioning. This checks the `last operation` status:
+    -   Verify the service provisioning, this checks the `last operation` status:
 
         ```
         cf services

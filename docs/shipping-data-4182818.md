@@ -2,6 +2,9 @@
 
 # Shipping Data
 
+> ### Restriction:  
+> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
+
 
 
 <a name="loio41828184ff604455b470034516791937__section_bhg_qkt_t3c"/>

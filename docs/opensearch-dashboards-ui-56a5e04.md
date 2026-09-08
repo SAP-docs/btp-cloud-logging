@@ -2,6 +2,9 @@
 
 # OpenSearch Dashboards UI
 
+> ### Restriction:  
+> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
+
 
 
 <a name="loio56a5e041a18341a5b35d85b360f7d591__section_mk2_ddy_t3c"/>
