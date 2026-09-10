@@ -45,7 +45,7 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
 
 2.  Retrieve Endpoint and Certificates.
 
-    Once OpenTelemetry ingestion is enabled, all new service bindings and service keys contain the required endpoint and credentials for mutual TLS. SAP Cloud Logging only supports mTLS for the OTLP endpoint. The service key contains the following OTLP-related properties:
+    Once OpenTelemetry ingestion is enabled, all new service bindings and service keys contain the endpoint and credentials for mutual TLS. SAP Cloud Logging only supports mTLS for the OTLP endpoint. The service key contains the following OTLP-related properties:
 
     ```
     {
@@ -60,6 +60,7 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
             "-----BEGIN PRIVATE KEY-----\n
              Your client key in PCKS #8 format\n
             -----END PRIVATE KEY-----\n",
+        // optional, see note below
         "server-ca":
           "-----BEGIN CERTIFICATE-----\n
            Your instance server certificate in PEM format\n
@@ -67,6 +68,9 @@ OpenTelemetry support in SAP Cloud Logging needs to be enabled with a service in
       }
     }
     ```
+
+    > ### Note:  
+    > `server-ca` is not needed in the common case: the ingest-otlp endpoint's server certificate chains to a public root, so the runtime's system trust store is sufficient. Only use `server-ca` from the binding if your runtime doesn't already trust public roots.
 
     > ### Note:  
     > TLS certificates for client authentication are issued with a validity period of 90 days by default. Rotate the service key and update the credentials in all sender configurations, otherwise, ingestion will stop.

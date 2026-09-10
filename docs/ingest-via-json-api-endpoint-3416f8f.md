@@ -95,10 +95,12 @@ Setting the `Content-Encoding` header allows HTTP clients to transfer payload mo
 ```
 echo 'json={"msg":"foobar"}' | gzip > json.gz
 curl --data-binary @json.gz -H "Content-Encoding: gzip" \
-     --cert client.crt --key client.key --cacert server-ca.crt \
+     --cert client.crt --key client.key \
        https://<ingest-mtls-endpoint>/
 
 ```
+
+The `--cacert server-ca.crt` option can be added to pin a specific server CA, but is not required if the client's system trust store already includes public roots.
 
 This feature is especially useful for users who handle large amounts of data.
 
@@ -116,6 +118,9 @@ You can read the `ingest-mtls-endpoint`, as well as the credentials \(`ingest-mt
 
 > ### Note:  
 > Deleting a binding does not revoke the corresponding certificate. [Rotate the Ingestion Root CA Certificate](rotate-the-ingestion-root-ca-certificate-bbcb3e7.md) if the root CA of your service instance is expiring soon, or the private key of a certificate was leaked.
+
+> ### Note:  
+> The `server-ca` field is only required for clients that don't trust public roots. In the common case, the runtime's system trust store is sufficient, because the ingest-mtls endpoint's server certificate chains to a public root.
 
 
 
