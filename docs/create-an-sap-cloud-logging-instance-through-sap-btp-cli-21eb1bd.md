@@ -11,7 +11,7 @@
 ## Prerequisites
 
 -   See [Prerequisites](prerequisites-41d8559.md).
--   Install BTP CLI as described in [Download and Start Using the BTP CLI Client](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8a8f17f5fd334fb583438edbd831d506.html).
+-   Install SAP BTP command line interface as described in [Download and Start Using the BTP CLI Client](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/8a8f17f5fd334fb583438edbd831d506.html).
 -   Ensure you are [logged in](https://help.sap.com/docs/btp/sap-business-technology-platform/log-in?version=Cloud).
 
 

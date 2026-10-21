@@ -89,6 +89,72 @@ Cloud Logging
 </td>
 <td valign="top">
 
+Documentation for the `span_passthrough` parameter
+
+</td>
+<td valign="top">
+
+Documentation for the \``span_passthrough`\` parameter explains how to improve Data Prepper behavior on incomplete traces: [Configuration Parameters](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters?q=span_passthrough#configuration-parameters-for-ingest_otlp)
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Announcement
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-10-01
+
+</td>
+<td valign="top">
+
+2026-10-01
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 OpenSearch and OpenSearch Dashboards update to version 2.19.6
 
 </td>
@@ -2612,7 +2678,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -2676,7 +2742,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -2750,7 +2816,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -2816,7 +2882,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -2882,7 +2948,7 @@ Not applicable
 </td>
 <td valign="top">
 
-Business Technology Platform
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -2946,7 +3012,7 @@ Not applicable
 </td>
 <td valign="top">
 
-Business Technology Platform
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3010,7 +3076,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2501b
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3074,7 +3140,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2501a
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3152,7 +3218,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2503b
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3222,7 +3288,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2412a
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3286,7 +3352,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2412a
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3350,7 +3416,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2411b
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3414,7 +3480,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2411b
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3478,7 +3544,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2407b
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3546,7 +3612,7 @@ Not applicable
 </td>
 <td valign="top">
 
-2407a
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3610,7 +3676,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3674,7 +3740,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3740,7 +3806,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3804,7 +3870,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3868,7 +3934,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -3936,7 +4002,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">
@@ -4000,7 +4066,7 @@ Not applicable
 </td>
 <td valign="top">
 
- 
+SAP Cloud Logging
 
 </td>
 <td valign="top">

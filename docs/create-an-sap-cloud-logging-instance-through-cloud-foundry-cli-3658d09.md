@@ -28,8 +28,7 @@ See [Prerequisites](prerequisites-41d8559.md).
         cf create-service cloud-logging standard cloud-logging -c '{
            "retention_period":  14,
             "backend": {
-               "max_data_nodes":  10,
-               "api_enabled": false
+               "max_data_nodes":  10
             },
             "ingest": {
                "max_instances":  10

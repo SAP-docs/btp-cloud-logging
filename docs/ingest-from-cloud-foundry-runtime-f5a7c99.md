@@ -120,14 +120,12 @@ For more information about different contexts, tools, options, and best practice
             -   `ingest-mtls-endpoint`
             -   `ingest-mtls-cert`
             -   `ingest-mtls-key`
-            -   `server-ca`
 
         2.  Prepare the JSON payload for cf cups. \(Newlines must be escaped if passed inline\)
 
             ```
             credentials.json:
             {
-            "ca": "<server-ca>",
             "cert": "<ingest-mtls-cert>",
             "key": "<ingest-mtls-key>"
             }
@@ -137,7 +135,7 @@ For more information about different contexts, tools, options, and best practice
 
             ```
             cf service-key <service-instance> <service-key> \
-            | jq '.credentials | {ca: ."server-ca", cert: ."ingest-mtls-cert", key: ."ingest-mtls-key"}' \
+            | jq '.credentials | {cert: ."ingest-mtls-cert", key: ."ingest-mtls-key"}' \
             > credentials.json
             ```
 
