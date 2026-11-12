@@ -10,7 +10,7 @@
 
 SAP Cloud Logging publishes a list of recommendations to be considered for security configuration under [SAP BTP Security Recommendations](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS&locale=en-US).
 
-Please verify whether the recommendations are relevant to you and ensure that your Cloud Logging instances are configured accordingly.
+Please verify whether the recommendations are relevant to you and ensure that your SAP Cloud Logging instances are configured accordingly.
 
 
 
@@ -18,7 +18,7 @@ Please verify whether the recommendations are relevant to you and ensure that yo
 
 ## Monitor Security Recommendations with SAP Cloud ALM
 
-With the Configuration & Security Analysis app of [SAP Cloud ALM](https://help.sap.com/docs/cloud-alm), you can check if your Cloud Logging instances are configured in alignment with the [SAP BTP Security Recommendations - Cloud Logging](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS&locale=en-US).
+With the Configuration & Security Analysis app of [SAP Cloud ALM](https://help.sap.com/docs/cloud-alm), you can check if your SAP Cloud Logging instances are configured in alignment with the [SAP BTP Security Recommendations - Cloud Logging](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS&locale=en-US).
 
 > ### Note:  
 > -   SAP Cloud Logging reports data to SAP Cloud ALM daily. For more information, see [Monitor Security Recommendations with SAP Cloud ALM](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/monitor-security-recommendations-with-sap-cloud-alm?locale=en-US).

@@ -140,7 +140,7 @@ Your request body must contain the information you want to index.
 
 ### Response
 
-Cloud Logging adheres to HTTP response code standards. If your request was successful, the response looks like:
+SAP Cloud Logging adheres to HTTP response code standards. If your request was successful, the response looks like:
 
 ```
 HTTP/2 200
@@ -176,8 +176,8 @@ If you cannot find the payload shipped in the respective index, the default dash
 You can analyze the ingested data in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md), based on custom dashboards or the Discover view. Indices match the following pattern: `logs-json-.*` 
 
 > ### Note:  
-> There are OpenSearch specifics restricting ingestion, such as mapping conflicts. Mapping conflicts in OpenSearch occur when indices have conflicting field mappings, leading to ambiguity in data interpretation and query failures. Resolving these conflicts involves aligning field types, analyzers, and other properties across indices to ensure consistent data handling and accurate search results. Cloud Logging performs basic sanitation and unification steps to prevent mapping conflicts. However, sending type-aligned data is mandatory to prevent mapping conflicts.
+> There are OpenSearch specifics restricting ingestion, such as mapping conflicts. Mapping conflicts in OpenSearch occur when indices have conflicting field mappings, leading to ambiguity in data interpretation and query failures. Resolving these conflicts involves aligning field types, analyzers, and other properties across indices to ensure consistent data handling and accurate search results. SAP Cloud Logging performs basic sanitation and unification steps to prevent mapping conflicts. However, sending type-aligned data is mandatory to prevent mapping conflicts.
 
 > ### Note:  
-> Cloud Logging provides parsing for w3c headers, sap\_passport, and other correlation mechanisms.
+> SAP Cloud Logging provides parsing for w3c headers, sap\_passport, and other correlation mechanisms.
 

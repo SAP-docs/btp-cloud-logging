@@ -3,15 +3,15 @@
 # Managing Your Instance
 
 > ### Restriction:  
-> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
+> FAQ knowledge is version-dependent and subject to change as version updates of SAP Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
 
 
 
 <a name="loio90943a11646a4de0bc9adf8b02167968__section_dwz_why_t3c"/>
 
-## How to share a Cloud Logging instance?
+## How to share a SAP Cloud Logging instance?
 
-SAP BTP does not natively support service instance sharing across subaccounts, but there are several ways to share access to a Cloud Logging instance across spaces, subaccounts, or environments.
+SAP BTP does not natively support service instance sharing across subaccounts, but there are several ways to share access to a SAP Cloud Logging instance across spaces, subaccounts, or environments.
 
 **Cloud Foundry**
 
@@ -27,7 +27,7 @@ For detailed guidance, sample scripts, and best practices on credential rotation
 
 Create a secret in the **target** namespace populated with the endpoints and credentials of the service key. See the prerequisites section of [Integrate with Cloud Logging](https://kyma-project.io/external-content/telemetry-manager/docs/user/integration/sap-cloud-logging/README.html#prerequisites) for details.
 
-**BTP instance sharing** \(via BTP CLI or SAP BTP Cockpit\)
+**SAP BTP instance sharing** \(via btp CLI or cockpit\)
 
 Limited to environments within the same subaccount. Works across Cloud Foundry, Kyma, and other environments, with credentials managed automatically. See the [BTP CLI reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-share-services-instance).
 
@@ -64,7 +64,7 @@ GET_plugins/_ism/explain/<index>?show_policy=true
 
 Upgrading or downgrading service plans is not supported. To move to a different plan, use a side-by-side migration:
 
-1.  Create a new Cloud Logging instance with the desired plan.
+1.  Create a new SAP Cloud Logging instance with the desired plan.
 2.  Configure your senders to send data to both instances simultaneously.
 3.  Once the new instance is set up and you are satisfied with the results, switch your observability workflows to the new instance.
 4.  Delete the old instance.
@@ -75,7 +75,7 @@ Upgrading or downgrading service plans is not supported. To move to a different 
 
 ## How to delete a service instance?
 
-All existing bindings and service keys must be deleted before the instance can be deprovisioned. The instance can be deleted via the SAP BTP cockpit, cf CLI, Kyma / BTP Operator, or btp CLI.
+All existing bindings and service keys must be deleted before the instance can be deprovisioned. The instance can be deleted via the cockpit, cf CLI, Kyma / SAP BTP Operator, or btp CLI.
 
 > ### Note:  
 > It is recommended to use the same mechanism to delete an instance as was used to create it.
@@ -84,11 +84,11 @@ All existing bindings and service keys must be deleted before the instance can b
 
 <a name="loio90943a11646a4de0bc9adf8b02167968__section_xls_zhy_t3c"/>
 
-## Why does binding an application to Cloud Logging fail?
+## Why does binding an application to SAP Cloud Logging fail?
 
 This can happen if the service instance has not finished provisioning, or if it is unhealthy.
 
-Instance creation can take up to a few minutes. Check the status via the SAP BTP cockpit or your provisioning tool before attempting to bind.
+Instance creation can take up to a few minutes. Check the status via the cockpit or your provisioning tool before attempting to bind.
 
 If the instance is fully provisioned but the binding still fails, retry the binding. Ask for support in case it fails frequently.
 

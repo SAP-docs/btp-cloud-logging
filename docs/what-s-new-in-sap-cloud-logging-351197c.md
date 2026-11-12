@@ -89,12 +89,142 @@ Cloud Logging
 </td>
 <td valign="top">
 
+OpenTelemetry dashboards now includes logs without `traceId` 
+
+</td>
+<td valign="top">
+
+The pre-configured OpenTelemetry dashboards now include logs without traceId. Previously, logs without `traceId` were filtered out.
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Changed
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-11-12
+
+</td>
+<td valign="top">
+
+2026-11-12
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+Bugfix for \[OTel\] K8s Container Metrics dashboard
+
+</td>
+<td valign="top">
+
+The pre-configured \[OTel\] K8s Kubelet Stats Node Metrics visualization of the \[OTel\] K8s Container Metrics dashboard now correctly displays metrics from Kyma's telemetry module \(`io.kyma-project.telemetry/runtime`\). It accepts both collector scope names and supports both `k8s.node.cpu.usage` and the older `k8s.node.cpu.utilization` metric name for backward compatibility.
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+Changed
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+SAP Cloud Logging
+
+</td>
+<td valign="top">
+
+2026-10-29
+
+</td>
+<td valign="top">
+
+2026-10-29
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Cloud Logging
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 Documentation for the `span_passthrough` parameter
 
 </td>
 <td valign="top">
 
-Documentation for the \``span_passthrough`\` parameter explains how to improve Data Prepper behavior on incomplete traces: [Configuration Parameters](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters?q=span_passthrough#configuration-parameters-for-ingest_otlp)
+Documentation for the `span_passthrough` parameter explains how to improve Data Prepper behavior on incomplete traces: [Configuration Parameters](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters?q=span_passthrough#configuration-parameters-for-ingest_otlp)
 
 </td>
 <td valign="top">
@@ -987,7 +1117,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-02-02
+2026-02-05
 
 </td>
 <td valign="top">
@@ -1055,7 +1185,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-02-02
+2026-02-05
 
 </td>
 <td valign="top">
@@ -1123,7 +1253,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-01-19
+2026-01-22
 
 </td>
 <td valign="top">
@@ -1191,7 +1321,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2026-01-19
+2026-01-22
 
 </td>
 <td valign="top">
@@ -1603,7 +1733,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2025-10-30
+2025-12-04
 
 </td>
 <td valign="top">
@@ -3017,7 +3147,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2025-02-26
+2025-03-06
 
 </td>
 <td valign="top">
@@ -3081,7 +3211,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2025-02-20
+2025-03-06
 
 </td>
 <td valign="top">
@@ -3145,7 +3275,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2025-02-06
+2025-03-06
 
 </td>
 <td valign="top">
@@ -3223,7 +3353,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2025-02-10
+2025-04-17
 
 </td>
 <td valign="top">
@@ -3293,7 +3423,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2024-12-06
+2024-12-12
 
 </td>
 <td valign="top">
@@ -3357,7 +3487,7 @@ SAP Cloud Logging
 </td>
 <td valign="top">
 
-2024-12-06
+2024-12-12
 
 </td>
 <td valign="top">

@@ -2,7 +2,7 @@
 
 # Create an SAP Cloud Logging Instance through SAP BTP Cockpit
 
-Procedure for creating a SAP Cloud Logging service instance and service key using the SAP BTP cockpit, enabling access to instance credentials for log management.
+Procedure for creating a SAP Cloud Logging service instance and service key using the cockpit, enabling access to instance credentials for log management.
 
 
 
@@ -18,9 +18,9 @@ See [Prerequisites](prerequisites-41d8559.md).
 
 ## Create a Service Instance
 
-To create an SAP Cloud Logging instance using the SAP BTP cockpit, follow these steps:
+To create an SAP Cloud Logging instance using the cockpit, follow these steps:
 
-1.  Open the SAP BTP cockpit and navigate to the *Instances and Subscriptions* page of your subaccount.
+1.  Open the cockpit and navigate to the *Instances and Subscriptions* page of your subaccount.
 2.  Choose *Create*.
 3.  Configure your Instance:
     -   Select *cloud-logging service*.

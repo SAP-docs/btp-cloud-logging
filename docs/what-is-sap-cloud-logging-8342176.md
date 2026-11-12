@@ -8,6 +8,15 @@ SAP Cloud Logging service is an instance-based observability service that builds
 
 
 
+## Key Benefits
+
+-   It is natively integrated with SAP BTP, offering seamless observability across Cloud Foundry, Kyma, and Kubernetes runtimes without additional infrastructure.
+-   It supports the OpenTelemetry standard for data ingestion, allowing you to ship observability data from modern application stacks with a simple configuration.
+-   It can be instantiated directly from the SAP BTP Service Marketplace using the cockpit, Cloud Foundry CLI, btp CLI, or SAP BTP Service Operator, fitting into existing SAP BTP workflows without requiring separate tooling.
+-   It supports sharing a single service instance across multiple Cloud Foundry spaces and organizations, reducing overhead when consolidating observability data from multiple applications.
+
+
+
 ## Features
 
 

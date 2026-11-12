@@ -2,7 +2,7 @@
 
 # Ingest from Cloud Foundry Runtime
 
-You can configure shipping logs and resource usage metrics from applications deployed on SAP BTP, Cloud Foundry environment in various ways. Even if you don't have specific application logs, you can analyze your applications using the automatically generated request logs from the Cloud Foundry router. Additionally, you benefit from default contents: dashboards, index patterns, and retention settings.
+You can configure shipping logs and resource usage metrics from applications deployed on Cloud Foundry environment in various ways. Even if you don't have specific application logs, you can analyze your applications using the automatically generated request logs from the Cloud Foundry router. Additionally, you benefit from default contents: dashboards, index patterns, and retention settings.
 
 
 
@@ -12,7 +12,7 @@ You can configure shipping logs and resource usage metrics from applications dep
 > ### Caution:  
 > Ensure that you consider [SAP BTP Security Recommendation BTP-CLS-0002](https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations?seclist-index=BTP-CLS-0002).
 
-All configuration steps can be done either using SAP BTP cockpit or the Cloud Foundry Command Line Interface \(cf CLI\).
+All configuration steps can be done either using cockpit or the Cloud Foundry Command Line Interface \(cf CLI\).
 
 
 
@@ -23,7 +23,7 @@ All configuration steps can be done either using SAP BTP cockpit or the Cloud Fo
 > ### Note:  
 > For shipping logs/metrics via Cloud Foundry, the service instance must have the [`ingest.enabled`](configuration-parameters-1830bca.md#loio1830bca1b060484e9cfabc0e62472e8e__table_brp_bjx_jzb) configuration parameter set to `true` \(by default\).
 
-Shipping logs from applications deployed on SAP BTP, Cloud Foundry environment can be configured using one of the below options:
+Shipping logs from applications deployed on Cloud Foundry environment can be configured using one of the below options:
 
 -   [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application), optionally using [Share Service Instance Across Different Spaces](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__share_service_instance_across_different_spaces) to consolidate observability data across spaces within one organization.
 -   [Bind the Application to a User Provided Service](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application_to_user_provided_service).
@@ -48,7 +48,7 @@ Shipping logs from applications deployed on SAP BTP, Cloud Foundry environment c
 
 3.  Go to the [Result](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__section_gvg_4k4_xyb) section.
 
-**Use the SAP BTP cockpit**
+**Use the cockpit**
 
 1.  [Log On to the Cloud Foundry Environment Using the SAP BTP Cockpit](https://help.sap.com/docs/btp/sap-business-technology-platform/cloud-foundry-environment).
 2.  Execute [Bind Service Instances to Applications Using the Cockpit](https://help.sap.com/docs/service-manager/sap-service-manager/binding-service-instances-to-cloud-foundry-applications) without binding parameters.
@@ -81,7 +81,7 @@ For more information about different contexts, tools, options, and best practice
 [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) is the recommended approach, because of simplicity in setup and maintenance. Introducing an indirection via service key and [binding to a user-provided service](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to send logs is only advisable:
 
 -   to reduce the dependency on bind operations in automated procedures.
--   to ingest across Cloud Foundry *orgs* to a single Cloud Logging instance.
+-   to ingest across Cloud Foundry *orgs* to a single SAP Cloud Logging instance.
 
 **Bind the Application to User Provided Service Using cf CLI**
 
@@ -151,7 +151,7 @@ For more information about different contexts, tools, options, and best practice
 
 6.  Proceed with [Bind the Application to the Service Instance](ingest-from-cloud-foundry-runtime-f5a7c99.md#loiof5a7c993743c4ee79722479371b90b37__bind_the_application) and bind to the user provided service.
 
-**Bind the Application to User Provided Service Using SAP BTP cockpit**
+**Bind the Application to User Provided Service Using cockpit**
 
 1.  [Log On to the Cloud Foundry Environment Using the SAP BTP Cockpit](https://help.sap.com/docs/btp/sap-business-technology-platform/cloud-foundry-environment).
 2.  Create a service key according to [Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html).

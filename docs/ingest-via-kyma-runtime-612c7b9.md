@@ -4,7 +4,7 @@
 
 Kyma's [Telemetry](https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-telemetry-module) module supports shipping observability signals to SAP Cloud Logging instances. You can configure different observability signal types independently of each other.
 
-To integrate Cloud Logging on SAP BTP, Kyma runtime, see [Telemetry Module: Integrate with SAP Cloud Logging](https://help.sap.com/docs/btp/sap-business-technology-platform/integrate-with-sap-cloud-logging).
+To integrate SAP Cloud Logging with Kyma runtime on SAP platform, see [Telemetry Module: Integrate with SAP Cloud Logging](https://help.sap.com/docs/btp/sap-business-technology-platform/integrate-with-sap-cloud-logging).
 
 After successful integration, you can analyze the ingested data in OpenSearch Dashboards \(see [Access and Analyze Observability Data](access-and-analyze-observability-data-dad5b01.md)\) based on the following index patterns:
 

@@ -2,14 +2,16 @@
 
 # Shipping Data
 
+Frequently asked questions and troubleshooting guidance for shipping data to SAP Cloud Logging.
+
 > ### Restriction:  
-> FAQ knowledge is version-dependent and subject to change as version updates of Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
+> FAQ knowledge is version-dependent and subject to change as version updates of SAP Cloud Logging and underlying OpenSource \(for example, OpenSearch\) occur.
 
 
 
 <a name="loio41828184ff604455b470034516791937__section_bhg_qkt_t3c"/>
 
-## Why is data not showing up in Cloud Logging?
+## Why is data not showing up in SAP Cloud Logging?
 
 If only some data is missing:
 
@@ -21,7 +23,7 @@ If data is missing entirely or for a specific time period:
 
 -   Check for expired client certificates. If expired, update the binding or service key to obtain new credentials.
 -   In case your disk utilization is too high, old data might be deleted by the disk-utilization-based data curation \(as explained within the [Service Plan](https://help.sap.com/docs/cloud-logging/cloud-logging/service-plans) documentation\). See [How to monitor the current disk utilization?](managing-your-instance-90943a1.md#loio90943a11646a4de0bc9adf8b02167968__section_x3x_zhy_t3c).
--   Check that your client is correctly configured to send data to your Cloud Logging instance.
+-   Check that your client is correctly configured to send data to your SAP Cloud Logging instance.
 -   Check if you follow the [ingestion guidelines](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-observability-data) for shipping observability data.
 
 Furthermore, the logs of your shipper may indicate failed requests or error responses that point to the root cause.
@@ -45,8 +47,8 @@ Additionally, check the following Cloud Foundry-specific points:
 
 -   Check for ingestion errors in the *Ingestion Overview* dashboard \(under **OpenSearch Dashboards → Dashboards**\).
 -   Check that the [JSON ingestion endpoint is enabled](https://help.sap.com/docs/cloud-logging/cloud-logging/configuration-parameters#configuration-parameters-for-ingest). It is enabled by default but can be disabled via configuration.
--   Verify that your application is properly configured to send signals to Cloud Logging:
-    -   Run `cf env <APP_NAME>` and check that `VCAP_SERVICES` contains a syslog drain URL pointing to your Cloud Logging instance's ingest endpoint. If the URL or credentials are missing or incorrect, unbind and rebind your application. A restart is not required. Signals that were not shipped before the rebind cannot be retrieved.
+-   Verify that your application is properly configured to send signals to SAP Cloud Logging:
+    -   Run `cf env <APP_NAME>` and check that `VCAP_SERVICES` contains a syslog drain URL pointing to your SAP Cloud Logging instance's ingest endpoint. If the URL or credentials are missing or incorrect, unbind and rebind your application. A restart is not required. Signals that were not shipped before the rebind cannot be retrieved.
 
         ```
         cf unbind-service <APP_NAME><SERVICE_INSTANCE>
@@ -56,7 +58,7 @@ Additionally, check the following Cloud Foundry-specific points:
     -   If resource metrics are missing, use `?drain-data=all` if using a user-provided service. Resource metrics are stored in the OpenTelemetry metrics indexes \(`metrics-otel-v1-*`\).
 
 
--   Check for Loggregator overload. Loggregator is the Cloud Foundry subsystem responsible for forwarding app signals to observability backends such as Cloud Logging. This is indicated by:
+-   Check for Loggregator overload. Loggregator is the Cloud Foundry subsystem responsible for forwarding app signals to observability backends such as SAP Cloud Logging. This is indicated by:
     -   [messages lost for application logs](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_srq_43t_t3c),
     -   [app instance exceeded log rate limit logs](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_ovv_43t_t3c).
 
@@ -67,15 +69,15 @@ Additionally, check the following Cloud Foundry-specific points:
 
 ## Why are there logs with `messages lost for application` as message content?
 
-This is a Loggregator notification \(see [Why is Cloud Foundry data not showing up?](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_zcf_43t_t3c)\). It indicates that signals are being dropped because Loggregator's buffer is full. This happens when more signals need to be forwarded than the channel can handle. The throughput is limited by the latency between Loggregator and the Cloud Logging ingest endpoint. Once the buffer exceeds 10,000 signals, the entire queue is dropped.
+This is a Loggregator notification \(see [Why is Cloud Foundry data not showing up?](shipping-data-4182818.md#loio41828184ff604455b470034516791937__section_zcf_43t_t3c)\). It indicates that signals are being dropped because Loggregator's buffer is full. This happens when more signals need to be forwarded than the channel can handle. The throughput is limited by the latency between Loggregator and the SAP Cloud Logging ingest endpoint. Once the buffer exceeds 10,000 signals, the entire queue is dropped.
 
 You can search for these notifications in OpenSearch Dashboards **Discover** using DQL: `"messages lost for application"`
 
 To avoid this:
 
--   Provision the Cloud Logging instance in a region close to the Cloud Foundry landscape hosting the apps.
+-   Provision the SAP Cloud Logging instance in a region close to the Cloud Foundry landscape hosting the apps.
 -   Reduce the signal volume per application instance.
--   Verify that the `syslog_drain_url` in the Cloud Logging entry of your Cloud Foundry environment variables uses the `https-batch` protocol. Older service bindings may not - rebind if needed. For user-provided services, see [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime).
+-   Verify that the `syslog_drain_url` in the SAP Cloud Logging entry of your Cloud Foundry environment variables uses the `https-batch` protocol. Older service bindings may not - rebind if needed. For user-provided services, see [Ingest from Cloud Foundry Runtime](https://help.sap.com/docs/cloud-logging/cloud-logging/ingest-via-cloud-foundry-runtime).
 
 
 
@@ -143,14 +145,14 @@ Additionally, check the following JSON API-specific points:
 
 <a name="loio41828184ff604455b470034516791937__section_ukn_p3t_t3c"/>
 
-## Is the Cloud Logging instance overloaded?
+## Is the SAP Cloud Logging instance overloaded?
 
-Overload occurs when the ingestion rate exceeds what the instance can handle. Cloud Logging responds with back pressure - returning retryable error codes to signal senders to slow down.
+Overload occurs when the ingestion rate exceeds what the instance can handle. Cloud SAP Cloud LoggingLogging responds with back pressure - returning retryable error codes to signal senders to slow down.
 
 **How to recognize it:**
 
 -   On the sender side: error response codes and failed request entries in your shipper logs.
--   In Cloud Logging: check the *Usage Metrics* dashboard \(under **OpenSearch Dashboards → Dashboards**\). If ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
+-   In SAP Cloud Logging: check the *Usage Metrics* dashboard \(under **OpenSearch Dashboards → Dashboards**\). If ingest instances are scaled to the maximum, or the cluster state is yellow or red, the instance is likely under pressure.
 
 **What to do:**
 
@@ -163,7 +165,7 @@ Overload occurs when the ingestion rate exceeds what the instance can handle. Cl
 
 ## What is the maximum request payload size?
 
-Cloud Logging rejects requests with a body size exceeding 4 MiB. A size-based rejection returns HTTP error code 413. This limit applies to all request types sent to Cloud Logging. If you hit this limit, split large batches into smaller requests.
+SAP Cloud Logging rejects requests with a body size exceeding 4 MiB. A size-based rejection returns HTTP error code 413. This limit applies to all request types sent to SAP Cloud Logging. If you hit this limit, split large batches into smaller requests.
 
 
 
@@ -171,7 +173,7 @@ Cloud Logging rejects requests with a body size exceeding 4 MiB. A size-based re
 
 ## What is the maximum number of fields per index?
 
-Cloud Logging uses the OpenSearch default of 1,000 fields per index \(`index.mapping.total_fields.limit`\). When this limit is exceeded, documents containing new fields are rejected.
+SAP Cloud Logging uses the OpenSearch default of 1,000 fields per index \(`index.mapping.total_fields.limit`\). When this limit is exceeded, documents containing new fields are rejected.
 
 In practice, the usable limit is closer to 500 for most data, because the default mappings create a `.keyword` sub-field for every string field - effectively using two field slots per ingested string field. See [What are .keyword fields in OpenSearch?](opensearch-dashboards-ui-56a5e04.md#loio56a5e041a18341a5b35d85b360f7d591__section_o14_ddy_t3c).
 
@@ -187,7 +189,7 @@ GET<index-name>/_mapping
 
 ## What retry settings should the sender use?
 
-Retry settings ensure data is not lost when Cloud Logging is temporarily overloaded. Strike a balance between retrying persistently and not overwhelming the service with more requests than it can handle.
+Retry settings ensure data is not lost when SAP Cloud Logging is temporarily overloaded. Strike a balance between retrying persistently and not overwhelming the service with more requests than it can handle.
 
 Configure retries with exponential backoff, as increasing delays between attempts reduce pressure on an already overloaded service while still ensuring data eventually gets through.
 

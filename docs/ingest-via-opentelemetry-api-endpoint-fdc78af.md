@@ -99,16 +99,16 @@ This section describes streamlined ways to instrument Java and node.JS applicati
 
 ### OpenTelemetry Java Agent Extension for SAP BTP Observability
 
-If you are using the OpenTelemetry Java agent you can add the [BTP observability extension](https://github.com/SAP/cf-java-logging-support/tree/main/cf-java-logging-support-opentelemetry-agent-extension) to simplify shipment configuration to Cloud Logging. Follow the link for detailed information on the configuration. The extension provide new exporters `cloud-logging` for logs, metrics, and traces. These exporters scan the application's environment variables for service bindings to Cloud Logging. They automatically configures an OTLP exporter for each binding found.
+If you are using the OpenTelemetry Java agent you can add the [SAP BTP observability extension](https://github.com/SAP/cf-java-logging-support/tree/main/cf-java-logging-support-opentelemetry-agent-extension) to simplify shipment configuration to SAP Cloud Logging. Follow the link for detailed information on the configuration. The extension provide new exporters `cloud-logging` for logs, metrics, and traces. These exporters scan the application's environment variables for service bindings to SAP Cloud Logging. They automatically configures an OTLP exporter for each binding found.
 
 > ### Note:  
 > The OpenTelemetry Java Agent Extension for SAP BTP Observability is part of the SAP Java Agent Extension delivered as part of the SAP Java buildpack. Using this extension allows integration with SAP Cloud ALM and SAP Cloud Logging in the same extension.
 
 
 
-### OpenTelemetry exporter for SAP Cloud Logging for Node.JS
+### OpenTelemetry exporter for SAP SAP Cloud Logging for Node.JS
 
-If you instrumented your node.JS application with the OpenTelemetry SDK you can add the [Cloud Logging exporter](https://github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs) to simplify shipment configuration to Cloud Logging. Follow the link for detailed information on the configuration. The package provides exporters for logs, metrics, and traces. It scans the application's environment variables for service bindings to Cloud Logging. For each binding a OTLP exporter is configured.
+If you instrumented your node.JS application with the OpenTelemetry SDK you can add the [Cloud Logging exporter](https://github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs) to simplify shipment configuration to SAP Cloud Logging. Follow the link for detailed information on the configuration. The package provides exporters for logs, metrics, and traces. It scans the application's environment variables for service bindings to SAP Cloud Logging. For each binding a OTLP exporter is configured.
 
 > ### Note:  
 > The exporter is compatible with CAP and SAP Cloud ALM libraries.
@@ -117,15 +117,15 @@ If you instrumented your node.JS application with the OpenTelemetry SDK you can 
 
 ### Using user-provided Services
 
-The Java and node.JS instrumentations support automatic scanning for bindings to managed Cloud Logging service instances. They also support user-provided service instances, if those service instances are configured correctly. User-provided services must fulfil two criteria:
+The Java and node.JS instrumentations support automatic scanning for bindings to managed SAP Cloud Logging service instances. They also support user-provided service instances, if those service instances are configured correctly. User-provided services must fulfil two criteria:
 
 1.  The need to be tagged with label *Cloud Logging*.
 2.  The need to contain the OTLP credentials from a service key.
 3.  Optionally, they can contain a syslog drain url, if log shipment of messages written to stdout/stderr is still required.
 
-The following example explains the creation of a user-provided service with valid configuration using the CloudFoundry CLI.
+The following example explains the creation of a user-provided service with valid configuration using the Cloud Foundry CLI.
 
-When connected to the source CF space which owns the managed Cloud Logging service instance that should receive the data execute the following command:
+When connected to the source CF space which owns the managed SAP Cloud Logging service instance that should receive the data execute the following command:
 
 > ### Sample Code:  
 > ```
@@ -142,9 +142,9 @@ This creates a new service key named test and saves the credentials in the JSON 
 > cf cups <your-service-name> -p credentials.json -t "Cloud Logging"
 > ```
 
-The `-t` option sets the correct tag and is required for the libraries to detect the service bindings. If you still need a syslog drain url, you can add it to the command via the argument `-l <your-syslog-drain-url>`. You can find the url in the service key created above.
+The `-t` option sets the correct tag and is required for the libraries to detect the service bindings. If you still need a syslog drain url, you can add it to the command via the argument `-l <your-syslog-drain-url>`. You can find the URL in the service key created above.
 
-You can now bind applications to the user-provided service. They should start sending data to Cloud Logging after they are restaged. Both instrumentations will log the configured exporters during start-up. They will also emit error messages, if the configuration was incorrect.
+You can now bind applications to the user-provided service. They should start sending data to SAP Cloud Logging after they are restaged. Both instrumentations will log the configured exporters during start-up. They will also emit error messages, if the configuration was incorrect.
 
 If you need to rotate the credentials, e.g., due to expiry of the certificates, create a new service key. Instead of creating a new user-provided service, you can update your user-provided service with the new credentials. To propagate the new credentials to the applications, they need to be restaged.
 
