@@ -21,6 +21,10 @@ If only some data is missing:
 
 If data is missing entirely or for a specific time period:
 
+-   Check the user's permissions (via the *user icon → View roles and identities*).
+    -   If `all_access` is assigned under *Roles*, the user has full admin permissions.
+    -   If only `manage_opendistro_config` and `own_index` are assigned under *Roles*, the user has minimal default permissions and lacks access to index data or admin features.
+    -   If IAS integration is in place, check *Backend roles* to see which IAS groups are passed to OpenSearch, and verify that those groups are mapped to the expected OpenSearch roles.
 -   Check for expired client certificates. If expired, update the binding or service key to obtain new credentials.
 -   In case your disk utilization is too high, old data might be deleted by the disk-utilization-based data curation \(as explained within the [Service Plan](https://help.sap.com/docs/cloud-logging/cloud-logging/service-plans) documentation\). See [How to monitor the current disk utilization?](managing-your-instance-90943a1.md#loio90943a11646a4de0bc9adf8b02167968__section_x3x_zhy_t3c).
 -   Check that your client is correctly configured to send data to your SAP Cloud Logging instance.
